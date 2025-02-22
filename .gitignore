@@ -29,6 +29,9 @@ ENV/
 
 # MkDocs
 site/
+docs/*
+!docs/index.md
+!docs/mibs.md
 
 # IDE
 .idea/
