@@ -75,12 +75,18 @@ class MibPlugin(BasePlugin):
         object_count = self.count_objects(mib_data)
         content += f"This MIB module contains {object_count} accessible objects.\n\n"
         
-        # List all accessible objects
+        # Generate table for accessible objects
+        content += "<table>\n"
+        content += "<tr><th>Object Name</th><th>OID</th><th>Access</th></tr>\n"
         for key, value in sorted(mib_data.items()):
             if isinstance(value, dict) and value.get('class') == 'objecttype' and value.get('maxaccess') != 'not-accessible':
                 access = value.get('maxaccess', 'unknown')
                 oid = value.get('oid', 'unknown')
-                content += f"- {key} ({oid}) [Access: {access}]\n"
+                content += f"<tr><td>{key}</td><td>{oid}</td><td>{access}</td></tr>\n"
+        content += "</table>\n"
+        
+        # Add download link for original MIB document
+        content += f"\n[Download original MIB document](../asn1/{module_name}.txt)\n"
         
         return content
 
