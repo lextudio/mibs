@@ -2,8 +2,38 @@ site_name: PySNMP MIB Repository
 site_description: Collection of SNMP MIB modules compatible with PySNMP
 site_url: https://mibs.pysnmp.com
 plugins:
-  - search
   - mib_plugin
+  - search:
+  - oid_search_plugin
+
+extra_javascript:
+  - search_index.js
+
+extra_css:
+  # Add any CSS files if needed from the asn1 directory
+  # - asn1/style.css
+
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - meta
+  - tables
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+
+include:
+  - asn1/**
+
 theme:
   name: material
   features:
@@ -27,21 +57,3 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-markdown_extensions:
-  - toc:
-      permalink: true
-  - meta
-  - tables
-  - attr_list
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.details
-  - pymdownx.superfences
-extra:
-  analytics:
-    provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
-extra_javascript:
-  - search_index.js

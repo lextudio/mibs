@@ -77,12 +77,15 @@ class MibPlugin(BasePlugin):
         
         # Generate table for accessible objects
         content += "<table>\n"
-        content += "<tr><th>Object Name</th><th>OID</th><th>Access</th></tr>\n"
+        content += "<tr><th>Object Name</th><th>OID</th><th>Access</th><th>Status</th><th>Syntax</th><th>Node Type</th></tr>\n"
         for key, value in sorted(mib_data.items()):
             if isinstance(value, dict) and value.get('class') == 'objecttype' and value.get('maxaccess') != 'not-accessible':
                 access = value.get('maxaccess', 'unknown')
                 oid = value.get('oid', 'unknown')
-                content += f"<tr><td>{key}</td><td>{oid}</td><td>{access}</td></tr>\n"
+                status = value.get('status', 'unknown')
+                syntax = value.get('syntax', {}).get('type', 'unknown')
+                nodetype = value.get('nodetype', 'unknown')
+                content += f"<tr><td>{key}</td><td>{oid}</td><td>{access}</td><td>{status}</td><td>{syntax}</td><td>{nodetype}</td></tr>\n"
         content += "</table>\n"
         
         # Add download link for original MIB document
