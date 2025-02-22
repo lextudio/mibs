@@ -1,0 +1,172 @@
+{
+  "imports": {
+    "IPV6-TC": [
+      "Ipv6Address",
+      "Ipv6IfIndexOrZero"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "experimental",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "ipv6UdpCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "IPV6-UDP-MIB",
+        "object": "ipv6UdpGroup"
+      }
+    ],
+    "name": "ipv6UdpCompliance",
+    "oid": "1.3.6.1.3.87.2.1.1",
+    "status": "current"
+  },
+  "ipv6UdpCompliances": {
+    "class": "objectidentity",
+    "name": "ipv6UdpCompliances",
+    "oid": "1.3.6.1.3.87.2.1"
+  },
+  "ipv6UdpConformance": {
+    "class": "objectidentity",
+    "name": "ipv6UdpConformance",
+    "oid": "1.3.6.1.3.87.2"
+  },
+  "ipv6UdpEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "IPV6-UDP-MIB",
+        "object": "ipv6UdpLocalAddress"
+      },
+      {
+        "implied": 0,
+        "module": "IPV6-UDP-MIB",
+        "object": "ipv6UdpLocalPort"
+      },
+      {
+        "implied": 0,
+        "module": "IPV6-UDP-MIB",
+        "object": "ipv6UdpIfIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "ipv6UdpEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.7.6.1",
+    "status": "current"
+  },
+  "ipv6UdpGroup": {
+    "class": "objectgroup",
+    "name": "ipv6UdpGroup",
+    "objects": [
+      {
+        "module": "IPV6-UDP-MIB",
+        "object": "ipv6UdpIfIndex"
+      }
+    ],
+    "oid": "1.3.6.1.3.87.2.2.1",
+    "status": "current"
+  },
+  "ipv6UdpGroups": {
+    "class": "objectidentity",
+    "name": "ipv6UdpGroups",
+    "oid": "1.3.6.1.3.87.2.2"
+  },
+  "ipv6UdpIfIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipv6UdpIfIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.6.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Ipv6IfIndexOrZero"
+    }
+  },
+  "ipv6UdpLocalAddress": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "ipv6UdpLocalAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.6.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Ipv6Address"
+    }
+  },
+  "ipv6UdpLocalPort": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "ipv6UdpLocalPort",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.6.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 65535,
+            "min": 0
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "ipv6UdpMIB": {
+    "class": "moduleidentity",
+    "name": "ipv6UdpMIB",
+    "oid": "1.3.6.1.3.87"
+  },
+  "ipv6UdpTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "ipv6UdpTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.7.6",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/IPV6-UDP-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:29 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "IPV6-UDP-MIB"
+  },
+  "udp": {
+    "class": "objectidentity",
+    "name": "udp",
+    "oid": "1.3.6.1.2.1.7"
+  }
+}

@@ -1,0 +1,836 @@
+{
+  "DistinguishedName": {
+    "class": "textualconvention",
+    "displayhint": "255a",
+    "name": "DistinguishedName",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "URLString": {
+    "class": "textualconvention",
+    "displayhint": "255a",
+    "name": "URLString",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "applAccumulatedInboundAssociations": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applAccumulatedInboundAssociations",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "applAccumulatedOutboundAssociations": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applAccumulatedOutboundAssociations",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "applCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRFC1565Group"
+      }
+    ],
+    "name": "applCompliance",
+    "oid": "1.3.6.1.2.1.27.3.2.1",
+    "status": "obsolete"
+  },
+  "applCompliances": {
+    "class": "objectidentity",
+    "name": "applCompliances",
+    "oid": "1.3.6.1.2.1.27.3.2"
+  },
+  "applConformance": {
+    "class": "objectidentity",
+    "name": "applConformance",
+    "oid": "1.3.6.1.2.1.27.3"
+  },
+  "applDescription": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applDescription",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.16",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "applDirectoryName": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applDirectoryName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DistinguishedName"
+    }
+  },
+  "applEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "applEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.27.1.1",
+    "status": "current"
+  },
+  "applFailedOutboundAssociations": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applFailedOutboundAssociations",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.15",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "applGroups": {
+    "class": "objectidentity",
+    "name": "applGroups",
+    "oid": "1.3.6.1.2.1.27.3.1"
+  },
+  "applInboundAssociations": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applInboundAssociations",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Gauge32"
+    }
+  },
+  "applIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "applIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "applLastChange": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applLastChange",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "applLastInboundActivity": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applLastInboundActivity",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.12",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "applLastOutboundActivity": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applLastOutboundActivity",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.13",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "applName": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "applOperStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applOperStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "congested": 4,
+          "down": 2,
+          "halted": 3,
+          "quiescing": 6,
+          "restarting": 5,
+          "up": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "applOutboundAssociations": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applOutboundAssociations",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Gauge32"
+    }
+  },
+  "applRFC1565Group": {
+    "class": "objectgroup",
+    "name": "applRFC1565Group",
+    "objects": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applName"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applVersion"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applUptime"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applOperStatus"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastChange"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applAccumulatedInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applAccumulatedOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastInboundActivity"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastOutboundActivity"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRejectedInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applFailedOutboundAssociations"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.27.3.1.7",
+    "status": "obsolete"
+  },
+  "applRFC2248Compliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRFC2248Group"
+      }
+    ],
+    "name": "applRFC2248Compliance",
+    "oid": "1.3.6.1.2.1.27.3.2.3",
+    "status": "deprecated"
+  },
+  "applRFC2248Group": {
+    "class": "objectgroup",
+    "name": "applRFC2248Group",
+    "objects": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applName"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applVersion"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applUptime"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applOperStatus"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastChange"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applAccumulatedInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applAccumulatedOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastInboundActivity"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastOutboundActivity"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRejectedInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applFailedOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applDescription"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applURL"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.27.3.1.3",
+    "status": "deprecated"
+  },
+  "applRFC2788Compliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRFC2788Group"
+      }
+    ],
+    "name": "applRFC2788Compliance",
+    "oid": "1.3.6.1.2.1.27.3.2.5",
+    "status": "current"
+  },
+  "applRFC2788Group": {
+    "class": "objectgroup",
+    "name": "applRFC2788Group",
+    "objects": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applName"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applDirectoryName"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applVersion"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applUptime"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applOperStatus"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastChange"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applAccumulatedInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applAccumulatedOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastInboundActivity"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applLastOutboundActivity"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRejectedInboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applFailedOutboundAssociations"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applDescription"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applURL"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.27.3.1.5",
+    "status": "current"
+  },
+  "applRejectedInboundAssociations": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applRejectedInboundAssociations",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.14",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "applTCPProtoID": {
+    "class": "objectidentity",
+    "name": "applTCPProtoID",
+    "oid": "1.3.6.1.2.1.27.4"
+  },
+  "applTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "applTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.27.1",
+    "status": "current"
+  },
+  "applUDPProtoID": {
+    "class": "objectidentity",
+    "name": "applUDPProtoID",
+    "oid": "1.3.6.1.2.1.27.5"
+  },
+  "applURL": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applURL",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.17",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "URLString"
+    }
+  },
+  "applUptime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applUptime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "applVersion": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "applVersion",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "application": {
+    "class": "moduleidentity",
+    "name": "application",
+    "oid": "1.3.6.1.2.1.27",
+    "revisions": [
+      {
+        "description": "This revision, published in RFC 2788, changes a number of DisplayStrings to SnmpAdminStrings. Note that this change is not strictly supported by SMIv2. However, the alternative of deprecating the old objects and defining new objects would have a more adverse impact on backward compatibility and interoperability, given the particular semantics of these objects. The defining reference for distinguished names has also been updated from RFC 1779 to RFC 2253.",
+        "revision": "2000-03-03 00:00"
+      },
+      {
+        "description": "This revision fixes a few small technical problems found in previous versions, mostly in regards to the conformance groups for different versions of this MIB. No changes have been made to the objects this MIB defines since RFC 2248.",
+        "revision": "1999-05-12 00:00"
+      },
+      {
+        "description": "This revision, published in RFC 2248, adds the applDescription and applURL objects, adds the quiescing state to the applOperStatus object and renames the MIB from the APPLICATION-MIB to the NETWORK-SERVICE-MIB.",
+        "revision": "1997-08-17 00:00"
+      },
+      {
+        "description": "The original version of this MIB was published in RFC 1565",
+        "revision": "1993-11-28 00:00"
+      }
+    ]
+  },
+  "assocApplicationProtocol": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "assocApplicationProtocol",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "assocApplicationType": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "assocApplicationType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "peerinitiator": 3,
+          "peerresponder": 4,
+          "uainitiator": 1,
+          "uaresponder": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "assocCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRFC1565Group"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocRFC1565Group"
+      }
+    ],
+    "name": "assocCompliance",
+    "oid": "1.3.6.1.2.1.27.3.2.2",
+    "status": "obsolete"
+  },
+  "assocDuration": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "assocDuration",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "assocEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applIndex"
+      },
+      {
+        "implied": 0,
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "assocEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.27.2.1",
+    "status": "current"
+  },
+  "assocIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "assocIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "assocRFC1565Group": {
+    "class": "objectgroup",
+    "name": "assocRFC1565Group",
+    "objects": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocRemoteApplication"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocApplicationProtocol"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocApplicationType"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocDuration"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.27.3.1.2",
+    "status": "obsolete"
+  },
+  "assocRFC2248Compliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRFC2248Group"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocRFC2248Group"
+      }
+    ],
+    "name": "assocRFC2248Compliance",
+    "oid": "1.3.6.1.2.1.27.3.2.4",
+    "status": "deprecated"
+  },
+  "assocRFC2248Group": {
+    "class": "objectgroup",
+    "name": "assocRFC2248Group",
+    "objects": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocRemoteApplication"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocApplicationProtocol"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocApplicationType"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocDuration"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.27.3.1.4",
+    "status": "deprecated"
+  },
+  "assocRFC2788Compliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "applRFC2788Group"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocRFC2788Group"
+      }
+    ],
+    "name": "assocRFC2788Compliance",
+    "oid": "1.3.6.1.2.1.27.3.2.6",
+    "status": "current"
+  },
+  "assocRFC2788Group": {
+    "class": "objectgroup",
+    "name": "assocRFC2788Group",
+    "objects": [
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocRemoteApplication"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocApplicationProtocol"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocApplicationType"
+      },
+      {
+        "module": "NETWORK-SERVICES-MIB",
+        "object": "assocDuration"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.27.3.1.6",
+    "status": "current"
+  },
+  "assocRemoteApplication": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "assocRemoteApplication",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.27.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "assocTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "assocTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.27.2",
+    "status": "current"
+  },
+  "imports": {
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION",
+      "TimeStamp"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/NETWORK-SERVICES-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:30 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "NETWORK-SERVICES-MIB"
+  }
+}

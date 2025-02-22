@@ -1,0 +1,1021 @@
+{
+  "dismanExpressionDefinitionGroup": {
+    "class": "objectgroup",
+    "name": "dismanExpressionDefinitionGroup",
+    "objects": [
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpression"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionValueType"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionComment"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionDeltaInterval"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionPrefix"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionErrors"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionEntryStatus"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expErrorTime"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expErrorIndex"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expErrorCode"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expErrorInstance"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectID"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectIDWildcard"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectSampleType"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectDeltaDiscontinuityID"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectDiscontinuityIDWildcard"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectDiscontinuityIDType"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectConditional"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectConditionalWildcard"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectEntryStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.90.3.2.2",
+    "status": "current"
+  },
+  "dismanExpressionMIB": {
+    "class": "moduleidentity",
+    "name": "dismanExpressionMIB",
+    "oid": "1.3.6.1.2.1.90",
+    "revisions": [
+      {
+        "description": "This is the initial version of this MIB. Published as RFC 2982",
+        "revision": "2000-10-16 00:00"
+      }
+    ]
+  },
+  "dismanExpressionMIBCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "dismanExpressionResourceGroup"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "dismanExpressionDefinitionGroup"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "dismanExpressionValueGroup"
+      }
+    ],
+    "name": "dismanExpressionMIBCompliance",
+    "oid": "1.3.6.1.2.1.90.3.1.1",
+    "status": "current"
+  },
+  "dismanExpressionMIBCompliances": {
+    "class": "objectidentity",
+    "name": "dismanExpressionMIBCompliances",
+    "oid": "1.3.6.1.2.1.90.3.1"
+  },
+  "dismanExpressionMIBConformance": {
+    "class": "objectidentity",
+    "name": "dismanExpressionMIBConformance",
+    "oid": "1.3.6.1.2.1.90.3"
+  },
+  "dismanExpressionMIBGroups": {
+    "class": "objectidentity",
+    "name": "dismanExpressionMIBGroups",
+    "oid": "1.3.6.1.2.1.90.3.2"
+  },
+  "dismanExpressionMIBObjects": {
+    "class": "objectidentity",
+    "name": "dismanExpressionMIBObjects",
+    "oid": "1.3.6.1.2.1.90.1"
+  },
+  "dismanExpressionResourceGroup": {
+    "class": "objectgroup",
+    "name": "dismanExpressionResourceGroup",
+    "objects": [
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expResourceDeltaMinimum"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expResourceDeltaWildcardInstanceMaximum"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expResourceDeltaWildcardInstances"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expResourceDeltaWildcardInstancesHigh"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expResourceDeltaWildcardInstanceResourceLacks"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.90.3.2.1",
+    "status": "current"
+  },
+  "dismanExpressionValueGroup": {
+    "class": "objectgroup",
+    "name": "dismanExpressionValueGroup",
+    "objects": [
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueCounter32Val"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueUnsigned32Val"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueTimeTicksVal"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueInteger32Val"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueIpAddressVal"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueOctetStringVal"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueOidVal"
+      },
+      {
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueCounter64Val"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.90.3.2.3",
+    "status": "current"
+  },
+  "expDefine": {
+    "class": "objectidentity",
+    "name": "expDefine",
+    "oid": "1.3.6.1.2.1.90.1.2"
+  },
+  "expErrorCode": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expErrorCode",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "deltaTooShort": 9,
+          "divideByZero": 11,
+          "invalidOperandType": 5,
+          "invalidSyntax": 1,
+          "recursion": 8,
+          "resourceUnavailable": 10,
+          "tooManyWildcardValues": 7,
+          "undefinedObjectIndex": 2,
+          "unmatchedParenthesis": 6,
+          "unrecognizedFunction": 4,
+          "unrecognizedOperator": 3
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "expErrorEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionName"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "expErrorEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.90.1.2.2.1",
+    "status": "current"
+  },
+  "expErrorIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expErrorIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Integer32"
+    }
+  },
+  "expErrorInstance": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expErrorInstance",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "expErrorTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expErrorTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.90.1.2.2",
+    "status": "current"
+  },
+  "expErrorTime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expErrorTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "expExpression": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "expExpression",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 1024,
+            "min": 1
+          }
+        ]
+      },
+      "type": "OCTET STRING"
+    }
+  },
+  "expExpressionComment": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expExpressionComment",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "expExpressionDeltaInterval": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "0"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expExpressionDeltaInterval",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 86400,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    },
+    "units": "seconds"
+  },
+  "expExpressionEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionName"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "expExpressionEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1",
+    "status": "current"
+  },
+  "expExpressionEntryStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "expExpressionEntryStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "expExpressionErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expExpressionErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "expExpressionName": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expExpressionName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 1
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "expExpressionOwner": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expExpressionOwner",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "expExpressionPrefix": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expExpressionPrefix",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "expExpressionTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expExpressionTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.90.1.2.1",
+    "status": "current"
+  },
+  "expExpressionValueType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expExpressionValueType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "counter32": 1,
+          "counter64": 8,
+          "integer32": 4,
+          "ipAddress": 5,
+          "objectId": 7,
+          "octetString": 6,
+          "timeTicks": 3,
+          "unsigned32": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "expObjectConditional": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "ObjectIdentifier",
+        "format": "oid",
+        "value": "(0, 0)"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expObjectConditional",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "expObjectConditionalWildcard": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expObjectConditionalWildcard",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TruthValue"
+    }
+  },
+  "expObjectDeltaDiscontinuityID": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "ObjectIdentifier",
+        "format": "oid",
+        "value": "(1, 3, 6, 1, 2, 1, 1, 3, 0)"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expObjectDeltaDiscontinuityID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "expObjectDiscontinuityIDType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expObjectDiscontinuityIDType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "dateAndTime": 3,
+          "timeStamp": 2,
+          "timeTicks": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "expObjectDiscontinuityIDWildcard": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expObjectDiscontinuityIDWildcard",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TruthValue"
+    }
+  },
+  "expObjectEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionName"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expObjectIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "expObjectEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1",
+    "status": "current"
+  },
+  "expObjectEntryStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "expObjectEntryStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "expObjectID": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "expObjectID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "expObjectIDWildcard": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expObjectIDWildcard",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TruthValue"
+    }
+  },
+  "expObjectIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expObjectIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "expObjectSampleType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "expObjectSampleType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.2.3.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "absoluteValue": 1,
+          "changedValue": 3,
+          "deltaValue": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "expObjectTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expObjectTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.90.1.2.3",
+    "status": "current"
+  },
+  "expResource": {
+    "class": "objectidentity",
+    "name": "expResource",
+    "oid": "1.3.6.1.2.1.90.1.1"
+  },
+  "expResourceDeltaMinimum": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "expResourceDeltaMinimum",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.90.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": -1,
+            "min": -1
+          },
+          {
+            "max": 600,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    },
+    "units": "seconds"
+  },
+  "expResourceDeltaWildcardInstanceMaximum": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "expResourceDeltaWildcardInstanceMaximum",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.90.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    },
+    "units": "instances"
+  },
+  "expResourceDeltaWildcardInstanceResourceLacks": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expResourceDeltaWildcardInstanceResourceLacks",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.90.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    },
+    "units": "instances"
+  },
+  "expResourceDeltaWildcardInstances": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expResourceDeltaWildcardInstances",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.90.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Gauge32"
+    },
+    "units": "instances"
+  },
+  "expResourceDeltaWildcardInstancesHigh": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expResourceDeltaWildcardInstancesHigh",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.90.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Gauge32"
+    },
+    "units": "instances"
+  },
+  "expValue": {
+    "class": "objectidentity",
+    "name": "expValue",
+    "oid": "1.3.6.1.2.1.90.1.3"
+  },
+  "expValueCounter32Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueCounter32Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "expValueCounter64Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueCounter64Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "expValueEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expExpressionName"
+      },
+      {
+        "implied": 1,
+        "module": "DISMAN-EXPRESSION-MIB",
+        "object": "expValueInstance"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "expValueEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1",
+    "status": "current"
+  },
+  "expValueInstance": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expValueInstance",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "expValueInteger32Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueInteger32Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Integer32"
+    }
+  },
+  "expValueIpAddressVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueIpAddressVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "expValueOctetStringVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueOctetStringVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 65536,
+            "min": 0
+          }
+        ]
+      },
+      "type": "OCTET STRING"
+    }
+  },
+  "expValueOidVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueOidVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "expValueTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "expValueTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.90.1.3.1",
+    "status": "current"
+  },
+  "expValueTimeTicksVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueTimeTicksVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeTicks"
+    }
+  },
+  "expValueUnsigned32Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "expValueUnsigned32Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.90.1.3.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "imports": {
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-MIB": [
+      "sysUpTime"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2",
+      "zeroDotZero"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "RowStatus",
+      "TEXTUAL-CONVENTION",
+      "TimeStamp",
+      "TruthValue"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/DISMAN-EXPRESSION-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:25 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "DISMAN-EXPRESSION-MIB"
+  },
+  "sysUpTimeInstance": {
+    "class": "objectidentity",
+    "name": "sysUpTimeInstance",
+    "oid": "1.3.6.1.2.1.1.3.0"
+  }
+}

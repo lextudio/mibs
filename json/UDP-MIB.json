@@ -1,0 +1,490 @@
+{
+  "imports": {
+    "INET-ADDRESS-MIB": [
+      "InetAddress",
+      "InetAddressType",
+      "InetPortNumber"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/UDP-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:38 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "UDP-MIB"
+  },
+  "udp": {
+    "class": "objectidentity",
+    "name": "udp",
+    "oid": "1.3.6.1.2.1.7"
+  },
+  "udpBaseGroup": {
+    "class": "objectgroup",
+    "name": "udpBaseGroup",
+    "objects": [
+      {
+        "module": "UDP-MIB",
+        "object": "udpInDatagrams"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpNoPorts"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpInErrors"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpOutDatagrams"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.50.2.2.2",
+    "status": "current"
+  },
+  "udpEndpointEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpEndpointLocalAddressType"
+      },
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpEndpointLocalAddress"
+      },
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpEndpointLocalPort"
+      },
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpEndpointRemoteAddressType"
+      },
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpEndpointRemoteAddress"
+      },
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpEndpointRemotePort"
+      },
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpEndpointInstance"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.7.7.1",
+    "status": "current"
+  },
+  "udpEndpointGroup": {
+    "class": "objectgroup",
+    "name": "udpEndpointGroup",
+    "objects": [
+      {
+        "module": "UDP-MIB",
+        "object": "udpEndpointProcess"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.50.2.2.4",
+    "status": "current"
+  },
+  "udpEndpointInstance": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointInstance",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "udpEndpointLocalAddress": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointLocalAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddress"
+    }
+  },
+  "udpEndpointLocalAddressType": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointLocalAddressType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddressType"
+    }
+  },
+  "udpEndpointLocalPort": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointLocalPort",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetPortNumber"
+    }
+  },
+  "udpEndpointProcess": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpEndpointProcess",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "udpEndpointRemoteAddress": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointRemoteAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddress"
+    }
+  },
+  "udpEndpointRemoteAddressType": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointRemoteAddressType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddressType"
+    }
+  },
+  "udpEndpointRemotePort": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointRemotePort",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.7.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetPortNumber"
+    }
+  },
+  "udpEndpointTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpEndpointTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.7.7",
+    "status": "current"
+  },
+  "udpEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpLocalAddress"
+      },
+      {
+        "implied": 0,
+        "module": "UDP-MIB",
+        "object": "udpLocalPort"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "udpEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.7.5.1",
+    "status": "deprecated"
+  },
+  "udpGroup": {
+    "class": "objectgroup",
+    "name": "udpGroup",
+    "objects": [
+      {
+        "module": "UDP-MIB",
+        "object": "udpInDatagrams"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpNoPorts"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpInErrors"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpOutDatagrams"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpLocalAddress"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpLocalPort"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.50.2.2.1",
+    "status": "deprecated"
+  },
+  "udpHCGroup": {
+    "class": "objectgroup",
+    "name": "udpHCGroup",
+    "objects": [
+      {
+        "module": "UDP-MIB",
+        "object": "udpHCInDatagrams"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpHCOutDatagrams"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.50.2.2.3",
+    "status": "current"
+  },
+  "udpHCInDatagrams": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpHCInDatagrams",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.7.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "udpHCOutDatagrams": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpHCOutDatagrams",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.7.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "udpInDatagrams": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpInDatagrams",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.7.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "udpInErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpInErrors",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.7.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "udpLocalAddress": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpLocalAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.5.1.1",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "udpLocalPort": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpLocalPort",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.7.5.1.2",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 65535,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "udpMIB": {
+    "class": "moduleidentity",
+    "name": "udpMIB",
+    "oid": "1.3.6.1.2.1.50",
+    "revisions": [
+      {
+        "description": "IP version neutral revision, incorporating the following revisions: - Added udpHCInDatagrams and udpHCOutDatagrams in order to provide high-capacity counters for fast networks. - Added text to the descriptions of all counter objects to indicate how discontinuities are detected. - Deprecated the IPv4-specific udpTable and replaced it with the version neutral udpEndpointTable. This table includes support for connected UDP endpoints and support for identification of the operating system process associated with a UDP endpoint. - Deprecated the udpGroup and replaced it with object groups representing the current set of objects. - Deprecated udpMIBCompliance and replaced it with udpMIBCompliance2, which includes the compliance information for the new object groups. This version published as RFC 4113.",
+        "revision": "2005-05-20 00:00"
+      },
+      {
+        "description": "Initial SMIv2 version, published as RFC 2013.",
+        "revision": "1994-11-01 00:00"
+      },
+      {
+        "description": "The initial revision of this MIB module was part of MIB-II, published as RFC 1213.",
+        "revision": "1991-03-31 00:00"
+      }
+    ]
+  },
+  "udpMIBCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "UDP-MIB",
+        "object": "udpGroup"
+      }
+    ],
+    "name": "udpMIBCompliance",
+    "oid": "1.3.6.1.2.1.50.2.1.1",
+    "status": "deprecated"
+  },
+  "udpMIBCompliance2": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "UDP-MIB",
+        "object": "udpBaseGroup"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpEndpointGroup"
+      },
+      {
+        "module": "UDP-MIB",
+        "object": "udpHCGroup"
+      }
+    ],
+    "name": "udpMIBCompliance2",
+    "oid": "1.3.6.1.2.1.50.2.1.2",
+    "status": "current"
+  },
+  "udpMIBCompliances": {
+    "class": "objectidentity",
+    "name": "udpMIBCompliances",
+    "oid": "1.3.6.1.2.1.50.2.1"
+  },
+  "udpMIBConformance": {
+    "class": "objectidentity",
+    "name": "udpMIBConformance",
+    "oid": "1.3.6.1.2.1.50.2"
+  },
+  "udpMIBGroups": {
+    "class": "objectidentity",
+    "name": "udpMIBGroups",
+    "oid": "1.3.6.1.2.1.50.2.2"
+  },
+  "udpNoPorts": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpNoPorts",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.7.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "udpOutDatagrams": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "udpOutDatagrams",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.7.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "udpTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "udpTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.7.5",
+    "status": "deprecated"
+  }
+}

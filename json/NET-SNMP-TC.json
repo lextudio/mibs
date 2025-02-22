@@ -1,0 +1,215 @@
+{
+  "Float": {
+    "class": "textualconvention",
+    "name": "Float",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "fixed": 7,
+        "size": [
+          {
+            "max": 7,
+            "min": 7
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "Opaque"
+    }
+  },
+  "aix": {
+    "class": "objectidentity",
+    "name": "aix",
+    "oid": "1.3.6.1.4.1.8072.3.2.15"
+  },
+  "bsdi": {
+    "class": "objectidentity",
+    "name": "bsdi",
+    "oid": "1.3.6.1.4.1.8072.3.2.11"
+  },
+  "dragonfly": {
+    "class": "objectidentity",
+    "name": "dragonfly",
+    "oid": "1.3.6.1.4.1.8072.3.2.17"
+  },
+  "freebsd": {
+    "class": "objectidentity",
+    "name": "freebsd",
+    "oid": "1.3.6.1.4.1.8072.3.2.8"
+  },
+  "hpux10": {
+    "class": "objectidentity",
+    "name": "hpux10",
+    "oid": "1.3.6.1.4.1.8072.3.2.6"
+  },
+  "hpux11": {
+    "class": "objectidentity",
+    "name": "hpux11",
+    "oid": "1.3.6.1.4.1.8072.3.2.14"
+  },
+  "hpux9": {
+    "class": "objectidentity",
+    "name": "hpux9",
+    "oid": "1.3.6.1.4.1.8072.3.2.1"
+  },
+  "imports": {
+    "NET-SNMP-MIB": [
+      "netSnmpAgentOIDs",
+      "netSnmpDomains",
+      "netSnmpModuleIDs"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "Opaque",
+      "TimeTicks",
+      "Unsigned32",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "irix": {
+    "class": "objectidentity",
+    "name": "irix",
+    "oid": "1.3.6.1.4.1.8072.3.2.9"
+  },
+  "linux": {
+    "class": "objectidentity",
+    "name": "linux",
+    "oid": "1.3.6.1.4.1.8072.3.2.10"
+  },
+  "macosx": {
+    "class": "objectidentity",
+    "name": "macosx",
+    "oid": "1.3.6.1.4.1.8072.3.2.16"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/NET-SNMP-TC.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:31 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "NET-SNMP-TC"
+  },
+  "netSnmpAAL5PVCDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpAAL5PVCDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.3"
+  },
+  "netSnmpAliasDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpAliasDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.7"
+  },
+  "netSnmpCallbackDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpCallbackDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.6"
+  },
+  "netSnmpDTLSSCTPDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpDTLSSCTPDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.9"
+  },
+  "netSnmpDTLSUDPDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpDTLSUDPDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.8"
+  },
+  "netSnmpTCPDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpTCPDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.1"
+  },
+  "netSnmpTCPIPv6Domain": {
+    "class": "objectidentity",
+    "name": "netSnmpTCPIPv6Domain",
+    "oid": "1.3.6.1.4.1.8072.3.3.5"
+  },
+  "netSnmpTCs": {
+    "class": "moduleidentity",
+    "name": "netSnmpTCs",
+    "oid": "1.3.6.1.4.1.8072.3.1.1",
+    "revisions": [
+      {
+        "description": "First draft",
+        "revision": "2002-02-12 00:00"
+      }
+    ]
+  },
+  "netSnmpTLSTCPDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpTLSTCPDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.10"
+  },
+  "netSnmpUDPIPv6Domain": {
+    "class": "objectidentity",
+    "name": "netSnmpUDPIPv6Domain",
+    "oid": "1.3.6.1.4.1.8072.3.3.4"
+  },
+  "netSnmpUnixDomain": {
+    "class": "objectidentity",
+    "name": "netSnmpUnixDomain",
+    "oid": "1.3.6.1.4.1.8072.3.3.2"
+  },
+  "netbsd": {
+    "class": "objectidentity",
+    "name": "netbsd",
+    "oid": "1.3.6.1.4.1.8072.3.2.7"
+  },
+  "openbsd": {
+    "class": "objectidentity",
+    "name": "openbsd",
+    "oid": "1.3.6.1.4.1.8072.3.2.12"
+  },
+  "osf": {
+    "class": "objectidentity",
+    "name": "osf",
+    "oid": "1.3.6.1.4.1.8072.3.2.4"
+  },
+  "solaris": {
+    "class": "objectidentity",
+    "name": "solaris",
+    "oid": "1.3.6.1.4.1.8072.3.2.3"
+  },
+  "sunos4": {
+    "class": "objectidentity",
+    "name": "sunos4",
+    "oid": "1.3.6.1.4.1.8072.3.2.2"
+  },
+  "ultrix": {
+    "class": "objectidentity",
+    "name": "ultrix",
+    "oid": "1.3.6.1.4.1.8072.3.2.5"
+  },
+  "unknown": {
+    "class": "objectidentity",
+    "name": "unknown",
+    "oid": "1.3.6.1.4.1.8072.3.2.255"
+  },
+  "win32": {
+    "class": "objectidentity",
+    "name": "win32",
+    "oid": "1.3.6.1.4.1.8072.3.2.13"
+  }
+}

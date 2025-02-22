@@ -1,0 +1,430 @@
+{
+  "imports": {
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString",
+      "SnmpEngineID"
+    ],
+    "SNMP-TARGET-MIB": [
+      "SnmpTagValue",
+      "snmpTargetAddrEntry"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "snmpModules"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "RowStatus",
+      "StorageType",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/SNMP-COMMUNITY-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:33 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "SNMP-COMMUNITY-MIB"
+  },
+  "snmpCommunityContextEngineID": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpCommunityContextEngineID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpEngineID"
+    }
+  },
+  "snmpCommunityContextName": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpCommunityContextName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "snmpCommunityEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 1,
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "snmpCommunityEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.6.3.18.1.1.1",
+    "status": "current"
+  },
+  "snmpCommunityGroup": {
+    "class": "objectgroup",
+    "name": "snmpCommunityGroup",
+    "objects": [
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityName"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunitySecurityName"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityContextEngineID"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityContextName"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityTransportTag"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityStorageType"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityStatus"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpTargetAddrTMask"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpTargetAddrMMS"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.18.2.2.1",
+    "status": "current"
+  },
+  "snmpCommunityIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpCommunityIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 1
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "snmpCommunityMIB": {
+    "class": "moduleidentity",
+    "name": "snmpCommunityMIB",
+    "oid": "1.3.6.1.6.3.18",
+    "revisions": [
+      {
+        "description": "This version published as RFC 2576.",
+        "revision": "2000-03-06 00:00"
+      },
+      {
+        "description": "The Initial Revision",
+        "revision": "1999-05-13 00:00"
+      }
+    ]
+  },
+  "snmpCommunityMIBCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpCommunityGroup"
+      }
+    ],
+    "name": "snmpCommunityMIBCompliance",
+    "oid": "1.3.6.1.6.3.18.2.1.1",
+    "status": "current"
+  },
+  "snmpCommunityMIBCompliances": {
+    "class": "objectidentity",
+    "name": "snmpCommunityMIBCompliances",
+    "oid": "1.3.6.1.6.3.18.2.1"
+  },
+  "snmpCommunityMIBConformance": {
+    "class": "objectidentity",
+    "name": "snmpCommunityMIBConformance",
+    "oid": "1.3.6.1.6.3.18.2"
+  },
+  "snmpCommunityMIBGroups": {
+    "class": "objectidentity",
+    "name": "snmpCommunityMIBGroups",
+    "oid": "1.3.6.1.6.3.18.2.2"
+  },
+  "snmpCommunityMIBObjects": {
+    "class": "objectidentity",
+    "name": "snmpCommunityMIBObjects",
+    "oid": "1.3.6.1.6.3.18.1"
+  },
+  "snmpCommunityName": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpCommunityName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "snmpCommunitySecurityName": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpCommunitySecurityName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 1
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "snmpCommunityStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpCommunityStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "snmpCommunityStorageType": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpCommunityStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "snmpCommunityTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpCommunityTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.6.3.18.1.1",
+    "status": "current"
+  },
+  "snmpCommunityTransportTag": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpCommunityTransportTag",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpTagValue"
+    }
+  },
+  "snmpProxyTrapForwardCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpProxyTrapForwardGroup"
+      }
+    ],
+    "name": "snmpProxyTrapForwardCompliance",
+    "oid": "1.3.6.1.6.3.18.2.1.2",
+    "status": "current"
+  },
+  "snmpProxyTrapForwardGroup": {
+    "class": "objectgroup",
+    "name": "snmpProxyTrapForwardGroup",
+    "objects": [
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpTrapAddress"
+      },
+      {
+        "module": "SNMP-COMMUNITY-MIB",
+        "object": "snmpTrapCommunity"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.18.2.2.3",
+    "status": "current"
+  },
+  "snmpTargetAddrExtEntry": {
+    "augmention": {
+      "module": "SNMP-COMMUNITY-MIB",
+      "name": "snmpTargetAddrExtEntry",
+      "object": "snmpTargetAddrEntry"
+    },
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpTargetAddrExtEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.6.3.18.1.2.1",
+    "status": "current"
+  },
+  "snmpTargetAddrExtTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpTargetAddrExtTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.6.3.18.1.2",
+    "status": "current"
+  },
+  "snmpTargetAddrMMS": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "484"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTargetAddrMMS",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 0,
+            "min": 0
+          },
+          {
+            "max": 2147483647,
+            "min": 484
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "snmpTargetAddrTMask": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTargetAddrTMask",
+    "nodetype": "column",
+    "oid": "1.3.6.1.6.3.18.1.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "OCTET STRING"
+    }
+  },
+  "snmpTrapAddress": {
+    "class": "objecttype",
+    "maxaccess": "accessible-for-notify",
+    "name": "snmpTrapAddress",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.6.3.18.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "snmpTrapCommunity": {
+    "class": "objecttype",
+    "maxaccess": "accessible-for-notify",
+    "name": "snmpTrapCommunity",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.6.3.18.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  }
+}

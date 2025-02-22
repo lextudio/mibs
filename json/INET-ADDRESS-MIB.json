@@ -1,0 +1,294 @@
+{
+  "InetAddress": {
+    "class": "textualconvention",
+    "name": "InetAddress",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "InetAddressDNS": {
+    "class": "textualconvention",
+    "displayhint": "255a",
+    "name": "InetAddressDNS",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 1
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "InetAddressIPv4": {
+    "class": "textualconvention",
+    "displayhint": "1d.1d.1d.1d",
+    "name": "InetAddressIPv4",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "fixed": 4,
+        "size": [
+          {
+            "max": 4,
+            "min": 4
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "InetAddressIPv4z": {
+    "class": "textualconvention",
+    "displayhint": "1d.1d.1d.1d%4d",
+    "name": "InetAddressIPv4z",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "fixed": 8,
+        "size": [
+          {
+            "max": 8,
+            "min": 8
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "InetAddressIPv6": {
+    "class": "textualconvention",
+    "displayhint": "2x:2x:2x:2x:2x:2x:2x:2x",
+    "name": "InetAddressIPv6",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "fixed": 16,
+        "size": [
+          {
+            "max": 16,
+            "min": 16
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "InetAddressIPv6z": {
+    "class": "textualconvention",
+    "displayhint": "2x:2x:2x:2x:2x:2x:2x:2x%4d",
+    "name": "InetAddressIPv6z",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "fixed": 20,
+        "size": [
+          {
+            "max": 20,
+            "min": 20
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "InetAddressPrefixLength": {
+    "class": "textualconvention",
+    "displayhint": "d",
+    "name": "InetAddressPrefixLength",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2040,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "Unsigned32"
+    }
+  },
+  "InetAddressType": {
+    "class": "textualconvention",
+    "name": "InetAddressType",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "dns": 16,
+          "ipv4": 1,
+          "ipv4z": 3,
+          "ipv6": 2,
+          "ipv6z": 4,
+          "unknown": 0
+        }
+      },
+      "tcbase": false,
+      "type": "INTEGER"
+    }
+  },
+  "InetAutonomousSystemNumber": {
+    "class": "textualconvention",
+    "displayhint": "d",
+    "name": "InetAutonomousSystemNumber",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "tcbase": false,
+      "type": "Unsigned32"
+    }
+  },
+  "InetPortNumber": {
+    "class": "textualconvention",
+    "displayhint": "d",
+    "name": "InetPortNumber",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 65535,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "Unsigned32"
+    }
+  },
+  "InetScopeType": {
+    "class": "textualconvention",
+    "name": "InetScopeType",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "adminLocal": 4,
+          "global": 14,
+          "interfaceLocal": 1,
+          "linkLocal": 2,
+          "organizationLocal": 8,
+          "siteLocal": 5,
+          "subnetLocal": 3
+        }
+      },
+      "tcbase": false,
+      "type": "INTEGER"
+    }
+  },
+  "InetVersion": {
+    "class": "textualconvention",
+    "name": "InetVersion",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "ipv4": 1,
+          "ipv6": 2,
+          "unknown": 0
+        }
+      },
+      "tcbase": false,
+      "type": "INTEGER"
+    }
+  },
+  "InetZoneIndex": {
+    "class": "textualconvention",
+    "displayhint": "d",
+    "name": "InetZoneIndex",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "tcbase": false,
+      "type": "Unsigned32"
+    }
+  },
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "inetAddressMIB": {
+    "class": "moduleidentity",
+    "name": "inetAddressMIB",
+    "oid": "1.3.6.1.2.1.76",
+    "revisions": [
+      {
+        "description": "Third version, published as RFC 4001. This revision introduces the InetZoneIndex, InetScopeType, and InetVersion textual conventions.",
+        "revision": "2005-02-04 00:00"
+      },
+      {
+        "description": "Second version, published as RFC 3291. This revision contains several clarifications and introduces several new textual conventions: InetAddressPrefixLength, InetPortNumber, InetAutonomousSystemNumber, InetAddressIPv4z, and InetAddressIPv6z.",
+        "revision": "2002-05-09 00:00"
+      },
+      {
+        "description": "Initial version, published as RFC 2851.",
+        "revision": "2000-06-08 00:00"
+      }
+    ]
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/INET-ADDRESS-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:25 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "INET-ADDRESS-MIB"
+  }
+}

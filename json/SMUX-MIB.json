@@ -1,0 +1,226 @@
+{
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "enterprises",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/SMUX-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:33 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "SMUX-MIB"
+  },
+  "smux": {
+    "class": "objectidentity",
+    "name": "smux",
+    "oid": "1.3.6.1.4.1.4.4"
+  },
+  "smuxPdescription": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smuxPdescription",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.1.1.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "smuxPeerEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "SMUX-MIB",
+        "object": "smuxPindex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smuxPeerEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.4.4.1.1",
+    "status": "mandatory"
+  },
+  "smuxPeerTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smuxPeerTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.4.4.1",
+    "status": "mandatory"
+  },
+  "smuxPidentity": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smuxPidentity",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.1.1.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "smuxPindex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smuxPindex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.1.1.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "smuxPstatus": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "smuxPstatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.1.1.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "connecting": 3,
+          "invalid": 2,
+          "valid": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smuxTindex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smuxTindex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.2.1.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "smuxTpriority": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smuxTpriority",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.2.1.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 0
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smuxTreeEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "SMUX-MIB",
+        "object": "smuxTsubtree"
+      },
+      {
+        "implied": 0,
+        "module": "SMUX-MIB",
+        "object": "smuxTpriority"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smuxTreeEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.4.4.2.1",
+    "status": "mandatory"
+  },
+  "smuxTreeTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smuxTreeTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.4.4.2",
+    "status": "mandatory"
+  },
+  "smuxTstatus": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "smuxTstatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.2.1.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "invalid": 2,
+          "valid": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smuxTsubtree": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smuxTsubtree",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.4.4.2.1.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "unix": {
+    "class": "objectidentity",
+    "name": "unix",
+    "oid": "1.3.6.1.4.1.4"
+  }
+}

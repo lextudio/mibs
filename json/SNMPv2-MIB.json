@@ -1,0 +1,1055 @@
+{
+  "authenticationFailure": {
+    "class": "notificationtype",
+    "name": "authenticationFailure",
+    "oid": "1.3.6.1.6.3.1.1.5.5",
+    "status": "current"
+  },
+  "coldStart": {
+    "class": "notificationtype",
+    "name": "coldStart",
+    "oid": "1.3.6.1.6.3.1.1.5.1",
+    "status": "current"
+  },
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2",
+      "snmpModules"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION",
+      "TestAndIncr",
+      "TimeStamp"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/SNMPv2-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:25 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "SNMPv2-MIB"
+  },
+  "snmp": {
+    "class": "objectidentity",
+    "name": "snmp",
+    "oid": "1.3.6.1.2.1.11"
+  },
+  "snmpBasicCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpSetGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "systemGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpBasicNotificationsGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpCommunityGroup"
+      }
+    ],
+    "name": "snmpBasicCompliance",
+    "oid": "1.3.6.1.6.3.1.2.1.2",
+    "status": "deprecated"
+  },
+  "snmpBasicComplianceRev2": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpSetGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "systemGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpBasicNotificationsGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpCommunityGroup"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpWarmStartNotificationGroup"
+      }
+    ],
+    "name": "snmpBasicComplianceRev2",
+    "oid": "1.3.6.1.6.3.1.2.1.3",
+    "status": "current"
+  },
+  "snmpBasicNotificationsGroup": {
+    "class": "notificationgroup",
+    "name": "snmpBasicNotificationsGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "coldStart"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "authenticationFailure"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.7",
+    "status": "current"
+  },
+  "snmpCommunityGroup": {
+    "class": "objectgroup",
+    "name": "snmpCommunityGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInBadCommunityNames"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInBadCommunityUses"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.9",
+    "status": "current"
+  },
+  "snmpEnableAuthenTraps": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "snmpEnableAuthenTraps",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.30",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 2,
+          "enabled": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "snmpGroup": {
+    "class": "objectgroup",
+    "name": "snmpGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInPkts"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInBadVersions"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInASNParseErrs"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpSilentDrops"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpProxyDrops"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpEnableAuthenTraps"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.8",
+    "status": "current"
+  },
+  "snmpInASNParseErrs": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInASNParseErrs",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInBadCommunityNames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInBadCommunityNames",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInBadCommunityUses": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInBadCommunityUses",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInBadValues": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInBadValues",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.10",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInBadVersions": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInBadVersions",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInGenErrs": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInGenErrs",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.12",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInGetNexts": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInGetNexts",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.16",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInGetRequests": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInGetRequests",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.15",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInGetResponses": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInGetResponses",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.18",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInNoSuchNames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInNoSuchNames",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.9",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInPkts": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInPkts",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInReadOnlys": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInReadOnlys",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.11",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInSetRequests": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInSetRequests",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.17",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInTooBigs": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInTooBigs",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.8",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInTotalReqVars": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInTotalReqVars",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.13",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInTotalSetVars": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInTotalSetVars",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.14",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpInTraps": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpInTraps",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.19",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpMIB": {
+    "class": "moduleidentity",
+    "name": "snmpMIB",
+    "oid": "1.3.6.1.6.3.1",
+    "revisions": [
+      {
+        "description": "This revision of this MIB module was published as RFC 3418.",
+        "revision": "2002-10-16 00:00"
+      },
+      {
+        "description": "This revision of this MIB module was published as RFC 1907.",
+        "revision": "1995-11-09 00:00"
+      },
+      {
+        "description": "The initial revision of this MIB module was published as RFC 1450.",
+        "revision": "1993-04-01 00:00"
+      }
+    ]
+  },
+  "snmpMIBCompliances": {
+    "class": "objectidentity",
+    "name": "snmpMIBCompliances",
+    "oid": "1.3.6.1.6.3.1.2.1"
+  },
+  "snmpMIBConformance": {
+    "class": "objectidentity",
+    "name": "snmpMIBConformance",
+    "oid": "1.3.6.1.6.3.1.2"
+  },
+  "snmpMIBGroups": {
+    "class": "objectidentity",
+    "name": "snmpMIBGroups",
+    "oid": "1.3.6.1.6.3.1.2.2"
+  },
+  "snmpMIBObjects": {
+    "class": "objectidentity",
+    "name": "snmpMIBObjects",
+    "oid": "1.3.6.1.6.3.1.1"
+  },
+  "snmpNotificationGroup": {
+    "class": "objectgroup",
+    "name": "snmpNotificationGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpTrapOID"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpTrapEnterprise"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.12",
+    "status": "current"
+  },
+  "snmpObsoleteGroup": {
+    "class": "objectgroup",
+    "name": "snmpObsoleteGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutPkts"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInTooBigs"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInNoSuchNames"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInBadValues"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInReadOnlys"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInGenErrs"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInTotalReqVars"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInTotalSetVars"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInGetRequests"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInGetNexts"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInSetRequests"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInGetResponses"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpInTraps"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutTooBigs"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutNoSuchNames"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutBadValues"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutGenErrs"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutGetRequests"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutGetNexts"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutSetRequests"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutGetResponses"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpOutTraps"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.10",
+    "status": "obsolete"
+  },
+  "snmpOutBadValues": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutBadValues",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.22",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutGenErrs": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutGenErrs",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.24",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutGetNexts": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutGetNexts",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.26",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutGetRequests": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutGetRequests",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.25",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutGetResponses": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutGetResponses",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.28",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutNoSuchNames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutNoSuchNames",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.21",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutPkts": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutPkts",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.2",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutSetRequests": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutSetRequests",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.27",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutTooBigs": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutTooBigs",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.20",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpOutTraps": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpOutTraps",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.29",
+    "status": "obsolete",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpProxyDrops": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpProxyDrops",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.32",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpSet": {
+    "class": "objectidentity",
+    "name": "snmpSet",
+    "oid": "1.3.6.1.6.3.1.1.6"
+  },
+  "snmpSetGroup": {
+    "class": "objectgroup",
+    "name": "snmpSetGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "snmpSetSerialNo"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.5",
+    "status": "current"
+  },
+  "snmpSetSerialNo": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "snmpSetSerialNo",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.6.3.1.1.6.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TestAndIncr"
+    }
+  },
+  "snmpSilentDrops": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpSilentDrops",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.11.31",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTrap": {
+    "class": "objectidentity",
+    "name": "snmpTrap",
+    "oid": "1.3.6.1.6.3.1.1.4"
+  },
+  "snmpTrapEnterprise": {
+    "class": "objecttype",
+    "maxaccess": "accessible-for-notify",
+    "name": "snmpTrapEnterprise",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.6.3.1.1.4.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "snmpTrapOID": {
+    "class": "objecttype",
+    "maxaccess": "accessible-for-notify",
+    "name": "snmpTrapOID",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.6.3.1.1.4.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "snmpTraps": {
+    "class": "objectidentity",
+    "name": "snmpTraps",
+    "oid": "1.3.6.1.6.3.1.1.5"
+  },
+  "snmpWarmStartNotificationGroup": {
+    "class": "notificationgroup",
+    "name": "snmpWarmStartNotificationGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "warmStart"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.11",
+    "status": "current"
+  },
+  "sysContact": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "sysContact",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "sysDescr": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysDescr",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "sysLocation": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "sysLocation",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "sysName": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "sysName",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "sysORDescr": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysORDescr",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.1.9.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "sysOREntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "SNMPv2-MIB",
+        "object": "sysORIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "sysOREntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.1.9.1",
+    "status": "current"
+  },
+  "sysORID": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysORID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.1.9.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "sysORIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "sysORIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.1.9.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "sysORLastChange": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysORLastChange",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "sysORTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "sysORTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.1.9",
+    "status": "current"
+  },
+  "sysORUpTime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysORUpTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.1.9.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "sysObjectID": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysObjectID",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "sysServices": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysServices",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 127,
+            "min": 0
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "sysUpTime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "sysUpTime",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeTicks"
+    }
+  },
+  "system": {
+    "class": "objectidentity",
+    "name": "system",
+    "oid": "1.3.6.1.2.1.1"
+  },
+  "systemGroup": {
+    "class": "objectgroup",
+    "name": "systemGroup",
+    "objects": [
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysDescr"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysObjectID"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysUpTime"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysContact"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysName"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysLocation"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysServices"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysORLastChange"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysORID"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysORUpTime"
+      },
+      {
+        "module": "SNMPv2-MIB",
+        "object": "sysORDescr"
+      }
+    ],
+    "oid": "1.3.6.1.6.3.1.2.2.6",
+    "status": "current"
+  },
+  "warmStart": {
+    "class": "notificationtype",
+    "name": "warmStart",
+    "oid": "1.3.6.1.6.3.1.1.5.2",
+    "status": "current"
+  }
+}

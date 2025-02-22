@@ -1,0 +1,898 @@
+{
+  "SnmpTLSAddress": {
+    "class": "textualconvention",
+    "displayhint": "1a",
+    "name": "SnmpTLSAddress",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 1
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "SnmpTLSFingerprint": {
+    "class": "textualconvention",
+    "displayhint": "1x:1x",
+    "name": "SnmpTLSFingerprint",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "imports": {
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMP-TARGET-MIB": [
+      "snmpTargetAddrName",
+      "snmpTargetParamsName"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2",
+      "snmpDomains"
+    ],
+    "SNMPv2-TC": [
+      "AutonomousType",
+      "DisplayString",
+      "PhysAddress",
+      "RowStatus",
+      "StorageType",
+      "TEXTUAL-CONVENTION",
+      "TimeStamp"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/SNMP-TLS-TM-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:34 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "SNMP-TLS-TM-MIB"
+  },
+  "snmpDTLSUDPDomain": {
+    "class": "objectidentity",
+    "name": "snmpDTLSUDPDomain",
+    "oid": "1.3.6.1.6.1.9",
+    "status": "current"
+  },
+  "snmpTLSTCPDomain": {
+    "class": "objectidentity",
+    "name": "snmpTLSTCPDomain",
+    "oid": "1.3.6.1.6.1.8",
+    "status": "current"
+  },
+  "snmpTlstmAddrCount": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmAddrCount",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.2.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Gauge32"
+    }
+  },
+  "snmpTlstmAddrEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 1,
+        "module": "SNMP-TARGET-MIB",
+        "object": "snmpTargetAddrName"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "snmpTlstmAddrEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.198.2.2.1.9.1",
+    "status": "current"
+  },
+  "snmpTlstmAddrRowStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpTlstmAddrRowStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.9.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "snmpTlstmAddrServerFingerprint": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "string",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTlstmAddrServerFingerprint",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.9.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpTLSFingerprint"
+    }
+  },
+  "snmpTlstmAddrServerIdentity": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "string",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTlstmAddrServerIdentity",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.9.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "snmpTlstmAddrStorageType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "3"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTlstmAddrStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.9.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "snmpTlstmAddrTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpTlstmAddrTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.198.2.2.1.9",
+    "status": "current"
+  },
+  "snmpTlstmAddrTableLastChanged": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmAddrTableLastChanged",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.2.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "snmpTlstmCertCommonName": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertCommonName",
+    "oid": "1.3.6.1.2.1.198.1.1.6",
+    "status": "current"
+  },
+  "snmpTlstmCertSANAny": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertSANAny",
+    "oid": "1.3.6.1.2.1.198.1.1.5",
+    "status": "current"
+  },
+  "snmpTlstmCertSANDNSName": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertSANDNSName",
+    "oid": "1.3.6.1.2.1.198.1.1.3",
+    "status": "current"
+  },
+  "snmpTlstmCertSANIpAddress": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertSANIpAddress",
+    "oid": "1.3.6.1.2.1.198.1.1.4",
+    "status": "current"
+  },
+  "snmpTlstmCertSANRFC822Name": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertSANRFC822Name",
+    "oid": "1.3.6.1.2.1.198.1.1.2",
+    "status": "current"
+  },
+  "snmpTlstmCertSpecified": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertSpecified",
+    "oid": "1.3.6.1.2.1.198.1.1.1",
+    "status": "current"
+  },
+  "snmpTlstmCertToTSNCount": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmCertToTSNCount",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Gauge32"
+    }
+  },
+  "snmpTlstmCertToTSNData": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "string",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTlstmCertToTSNData",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 1024,
+            "min": 0
+          }
+        ]
+      },
+      "type": "OCTET STRING"
+    }
+  },
+  "snmpTlstmCertToTSNEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNID"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "snmpTlstmCertToTSNEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3.1",
+    "status": "current"
+  },
+  "snmpTlstmCertToTSNFingerprint": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpTlstmCertToTSNFingerprint",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 1
+          }
+        ]
+      },
+      "type": "SnmpTLSFingerprint"
+    }
+  },
+  "snmpTlstmCertToTSNID": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpTlstmCertToTSNID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "snmpTlstmCertToTSNMIdentities": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertToTSNMIdentities",
+    "oid": "1.3.6.1.2.1.198.1.1"
+  },
+  "snmpTlstmCertToTSNMapType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "ObjectIdentifier",
+        "format": "oid",
+        "value": "(1, 3, 6, 1, 2, 1, 198, 1, 1, 1)"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTlstmCertToTSNMapType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "AutonomousType"
+    }
+  },
+  "snmpTlstmCertToTSNRowStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpTlstmCertToTSNRowStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "snmpTlstmCertToTSNStorageType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "3"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTlstmCertToTSNStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "snmpTlstmCertToTSNTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpTlstmCertToTSNTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.198.2.2.1.3",
+    "status": "current"
+  },
+  "snmpTlstmCertToTSNTableLastChanged": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmCertToTSNTableLastChanged",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "snmpTlstmCertificateMapping": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCertificateMapping",
+    "oid": "1.3.6.1.2.1.198.2.2.1"
+  },
+  "snmpTlstmCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmStatsGroup"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmIncomingGroup"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmOutgoingGroup"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmNotificationGroup"
+      }
+    ],
+    "name": "snmpTlstmCompliance",
+    "oid": "1.3.6.1.2.1.198.3.1.1",
+    "status": "current"
+  },
+  "snmpTlstmCompliances": {
+    "class": "objectidentity",
+    "name": "snmpTlstmCompliances",
+    "oid": "1.3.6.1.2.1.198.3.1"
+  },
+  "snmpTlstmConfig": {
+    "class": "objectidentity",
+    "name": "snmpTlstmConfig",
+    "oid": "1.3.6.1.2.1.198.2.2"
+  },
+  "snmpTlstmConformance": {
+    "class": "objectidentity",
+    "name": "snmpTlstmConformance",
+    "oid": "1.3.6.1.2.1.198.3"
+  },
+  "snmpTlstmGroups": {
+    "class": "objectidentity",
+    "name": "snmpTlstmGroups",
+    "oid": "1.3.6.1.2.1.198.3.2"
+  },
+  "snmpTlstmIdentities": {
+    "class": "objectidentity",
+    "name": "snmpTlstmIdentities",
+    "oid": "1.3.6.1.2.1.198.1"
+  },
+  "snmpTlstmIncomingGroup": {
+    "class": "objectgroup",
+    "name": "snmpTlstmIncomingGroup",
+    "objects": [
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNCount"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNTableLastChanged"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNFingerprint"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNMapType"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNData"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNStorageType"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmCertToTSNRowStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.198.3.2.2",
+    "status": "current"
+  },
+  "snmpTlstmMIB": {
+    "class": "moduleidentity",
+    "name": "snmpTlstmMIB",
+    "oid": "1.3.6.1.2.1.198",
+    "revisions": [
+      {
+        "description": "This version of this MIB module is part of RFC 6353; see the RFC itself for full legal notices. The only change was to introduce new wording to reflect require changes for IDNA addresses in the SnmpTLSAddress TC.",
+        "revision": "2011-07-19 00:00"
+      },
+      {
+        "description": "This version of this MIB module is part of RFC 5953; see the RFC itself for full legal notices.",
+        "revision": "2010-05-07 00:00"
+      }
+    ]
+  },
+  "snmpTlstmNotificationGroup": {
+    "class": "notificationgroup",
+    "name": "snmpTlstmNotificationGroup",
+    "objects": [
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmServerCertificateUnknown"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmServerInvalidCertificate"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.198.3.2.4",
+    "status": "current"
+  },
+  "snmpTlstmNotifications": {
+    "class": "objectidentity",
+    "name": "snmpTlstmNotifications",
+    "oid": "1.3.6.1.2.1.198.0"
+  },
+  "snmpTlstmObjects": {
+    "class": "objectidentity",
+    "name": "snmpTlstmObjects",
+    "oid": "1.3.6.1.2.1.198.2"
+  },
+  "snmpTlstmOutgoingGroup": {
+    "class": "objectgroup",
+    "name": "snmpTlstmOutgoingGroup",
+    "objects": [
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmParamsCount"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmParamsTableLastChanged"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmParamsClientFingerprint"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmParamsStorageType"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmParamsRowStatus"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmAddrCount"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmAddrTableLastChanged"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmAddrServerFingerprint"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmAddrServerIdentity"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmAddrStorageType"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmAddrRowStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.198.3.2.3",
+    "status": "current"
+  },
+  "snmpTlstmParamsClientFingerprint": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpTlstmParamsClientFingerprint",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.6.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpTLSFingerprint"
+    }
+  },
+  "snmpTlstmParamsCount": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmParamsCount",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Gauge32"
+    }
+  },
+  "snmpTlstmParamsEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 1,
+        "module": "SNMP-TARGET-MIB",
+        "object": "snmpTargetParamsName"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "snmpTlstmParamsEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.198.2.2.1.6.1",
+    "status": "current"
+  },
+  "snmpTlstmParamsRowStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "snmpTlstmParamsRowStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.6.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "snmpTlstmParamsStorageType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "3"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "snmpTlstmParamsStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.198.2.2.1.6.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "snmpTlstmParamsTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "snmpTlstmParamsTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.198.2.2.1.6",
+    "status": "current"
+  },
+  "snmpTlstmParamsTableLastChanged": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmParamsTableLastChanged",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "snmpTlstmServerCertificateUnknown": {
+    "class": "notificationtype",
+    "name": "snmpTlstmServerCertificateUnknown",
+    "objects": [
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionUnknownServerCertificate"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.198.0.1",
+    "status": "current"
+  },
+  "snmpTlstmServerInvalidCertificate": {
+    "class": "notificationtype",
+    "name": "snmpTlstmServerInvalidCertificate",
+    "objects": [
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmAddrServerFingerprint"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionInvalidServerCertificates"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.198.0.2",
+    "status": "current"
+  },
+  "snmpTlstmSession": {
+    "class": "objectidentity",
+    "name": "snmpTlstmSession",
+    "oid": "1.3.6.1.2.1.198.2.1"
+  },
+  "snmpTlstmSessionAccepts": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionAccepts",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionClientCloses": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionClientCloses",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionInvalidCaches": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionInvalidCaches",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionInvalidClientCertificates": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionInvalidClientCertificates",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionInvalidServerCertificates": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionInvalidServerCertificates",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionNoSessions": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionNoSessions",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionOpenErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionOpenErrors",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionOpens": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionOpens",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionServerCloses": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionServerCloses",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmSessionUnknownServerCertificate": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "snmpTlstmSessionUnknownServerCertificate",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.198.2.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "snmpTlstmStatsGroup": {
+    "class": "objectgroup",
+    "name": "snmpTlstmStatsGroup",
+    "objects": [
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionOpens"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionClientCloses"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionOpenErrors"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionAccepts"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionServerCloses"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionNoSessions"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionInvalidClientCertificates"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionUnknownServerCertificate"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionInvalidServerCertificates"
+      },
+      {
+        "module": "SNMP-TLS-TM-MIB",
+        "object": "snmpTlstmSessionInvalidCaches"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.198.3.2.1",
+    "status": "current"
+  }
+}

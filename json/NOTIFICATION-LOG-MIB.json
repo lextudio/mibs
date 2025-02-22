@@ -1,0 +1,885 @@
+{
+  "imports": {
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString",
+      "SnmpEngineID"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "Opaque",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DateAndTime",
+      "DisplayString",
+      "PhysAddress",
+      "RowStatus",
+      "StorageType",
+      "TAddress",
+      "TDomain",
+      "TEXTUAL-CONVENTION",
+      "TimeStamp"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/NOTIFICATION-LOG-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:32 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "NOTIFICATION-LOG-MIB"
+  },
+  "nlmConfig": {
+    "class": "objectidentity",
+    "name": "nlmConfig",
+    "oid": "1.3.6.1.2.1.92.1.1"
+  },
+  "nlmConfigGlobalAgeOut": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1440"
+      }
+    },
+    "maxaccess": "read-write",
+    "name": "nlmConfigGlobalAgeOut",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.92.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    },
+    "units": "minutes"
+  },
+  "nlmConfigGlobalEntryLimit": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "0"
+      }
+    },
+    "maxaccess": "read-write",
+    "name": "nlmConfigGlobalEntryLimit",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.92.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "nlmConfigLogAdminStatus": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "nlmConfigLogAdminStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 2,
+          "enabled": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "nlmConfigLogEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogName"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "nlmConfigLogEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1",
+    "status": "current"
+  },
+  "nlmConfigLogEntryLimit": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "0"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "nlmConfigLogEntryLimit",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "nlmConfigLogEntryStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "nlmConfigLogEntryStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "nlmConfigLogFilterName": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "nlmConfigLogFilterName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "nlmConfigLogOperStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmConfigLogOperStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 1,
+          "noFilter": 3,
+          "operational": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "nlmConfigLogStorageType": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "nlmConfigLogStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "nlmConfigLogTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmConfigLogTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.92.1.1.3",
+    "status": "current"
+  },
+  "nlmLog": {
+    "class": "objectidentity",
+    "name": "nlmLog",
+    "oid": "1.3.6.1.2.1.92.1.3"
+  },
+  "nlmLogContextEngineID": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogContextEngineID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpEngineID"
+    }
+  },
+  "nlmLogContextName": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogContextName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "nlmLogDateAndTime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogDateAndTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DateAndTime"
+    }
+  },
+  "nlmLogEngineID": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogEngineID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpEngineID"
+    }
+  },
+  "nlmLogEngineTAddress": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogEngineTAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TAddress"
+    }
+  },
+  "nlmLogEngineTDomain": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogEngineTDomain",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TDomain"
+    }
+  },
+  "nlmLogEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogName"
+      },
+      {
+        "implied": 0,
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "nlmLogEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1",
+    "status": "current"
+  },
+  "nlmLogIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmLogIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "nlmLogName": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmLogName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.1.3.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "nlmLogNotificationID": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogNotificationID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "nlmLogTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmLogTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.92.1.3.1",
+    "status": "current"
+  },
+  "nlmLogTime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "nlmLogVariableCounter32Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableCounter32Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "nlmLogVariableCounter64Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableCounter64Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "nlmLogVariableEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogName"
+      },
+      {
+        "implied": 0,
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogIndex"
+      },
+      {
+        "implied": 0,
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "nlmLogVariableEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1",
+    "status": "current"
+  },
+  "nlmLogVariableID": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "nlmLogVariableIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmLogVariableIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "nlmLogVariableInteger32Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableInteger32Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Integer32"
+    }
+  },
+  "nlmLogVariableIpAddressVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableIpAddressVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "nlmLogVariableOctetStringVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableOctetStringVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "nlmLogVariableOidVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableOidVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "nlmLogVariableOpaqueVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableOpaqueVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.12",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Opaque"
+    }
+  },
+  "nlmLogVariableTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmLogVariableTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.92.1.3.2",
+    "status": "current"
+  },
+  "nlmLogVariableTimeTicksVal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableTimeTicksVal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeTicks"
+    }
+  },
+  "nlmLogVariableUnsigned32Val": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableUnsigned32Val",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "nlmLogVariableValueType": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmLogVariableValueType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.3.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "counter32": 1,
+          "counter64": 8,
+          "integer32": 4,
+          "ipAddress": 5,
+          "objectId": 7,
+          "octetString": 6,
+          "opaque": 9,
+          "timeTicks": 3,
+          "unsigned32": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "nlmStats": {
+    "class": "objectidentity",
+    "name": "nlmStats",
+    "oid": "1.3.6.1.2.1.92.1.2"
+  },
+  "nlmStatsGlobalNotificationsBumped": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmStatsGlobalNotificationsBumped",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.92.1.2.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    },
+    "units": "notifications"
+  },
+  "nlmStatsGlobalNotificationsLogged": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmStatsGlobalNotificationsLogged",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.92.1.2.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    },
+    "units": "notifications"
+  },
+  "nlmStatsLogEntry": {
+    "augmention": {
+      "module": "NOTIFICATION-LOG-MIB",
+      "name": "nlmStatsLogEntry",
+      "object": "nlmConfigLogEntry"
+    },
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmStatsLogEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.92.1.2.3.1",
+    "status": "current"
+  },
+  "nlmStatsLogNotificationsBumped": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmStatsLogNotificationsBumped",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.2.3.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    },
+    "units": "notifications"
+  },
+  "nlmStatsLogNotificationsLogged": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "nlmStatsLogNotificationsLogged",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.92.1.2.3.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    },
+    "units": "notifications"
+  },
+  "nlmStatsLogTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "nlmStatsLogTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.92.1.2.3",
+    "status": "current"
+  },
+  "notificationLogConfigGroup": {
+    "class": "objectgroup",
+    "name": "notificationLogConfigGroup",
+    "objects": [
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigGlobalEntryLimit"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigGlobalAgeOut"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigLogFilterName"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigLogEntryLimit"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigLogAdminStatus"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigLogOperStatus"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigLogStorageType"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmConfigLogEntryStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.92.3.2.1",
+    "status": "current"
+  },
+  "notificationLogDateGroup": {
+    "class": "objectgroup",
+    "name": "notificationLogDateGroup",
+    "objects": [
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogDateAndTime"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.92.3.2.4",
+    "status": "current"
+  },
+  "notificationLogLogGroup": {
+    "class": "objectgroup",
+    "name": "notificationLogLogGroup",
+    "objects": [
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogTime"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogEngineID"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogEngineTAddress"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogEngineTDomain"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogContextEngineID"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogContextName"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogNotificationID"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableID"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableValueType"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableCounter32Val"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableUnsigned32Val"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableTimeTicksVal"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableInteger32Val"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableOctetStringVal"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableIpAddressVal"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableOidVal"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableCounter64Val"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmLogVariableOpaqueVal"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.92.3.2.3",
+    "status": "current"
+  },
+  "notificationLogMIB": {
+    "class": "moduleidentity",
+    "name": "notificationLogMIB",
+    "oid": "1.3.6.1.2.1.92",
+    "revisions": [
+      {
+        "description": "This is the initial version of this MIB. Published as RFC 3014",
+        "revision": "2000-11-27 00:00"
+      }
+    ]
+  },
+  "notificationLogMIBCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "notificationLogConfigGroup"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "notificationLogStatsGroup"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "notificationLogLogGroup"
+      }
+    ],
+    "name": "notificationLogMIBCompliance",
+    "oid": "1.3.6.1.2.1.92.3.1.1",
+    "status": "current"
+  },
+  "notificationLogMIBCompliances": {
+    "class": "objectidentity",
+    "name": "notificationLogMIBCompliances",
+    "oid": "1.3.6.1.2.1.92.3.1"
+  },
+  "notificationLogMIBConformance": {
+    "class": "objectidentity",
+    "name": "notificationLogMIBConformance",
+    "oid": "1.3.6.1.2.1.92.3"
+  },
+  "notificationLogMIBGroups": {
+    "class": "objectidentity",
+    "name": "notificationLogMIBGroups",
+    "oid": "1.3.6.1.2.1.92.3.2"
+  },
+  "notificationLogMIBObjects": {
+    "class": "objectidentity",
+    "name": "notificationLogMIBObjects",
+    "oid": "1.3.6.1.2.1.92.1"
+  },
+  "notificationLogStatsGroup": {
+    "class": "objectgroup",
+    "name": "notificationLogStatsGroup",
+    "objects": [
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmStatsGlobalNotificationsLogged"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmStatsGlobalNotificationsBumped"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmStatsLogNotificationsLogged"
+      },
+      {
+        "module": "NOTIFICATION-LOG-MIB",
+        "object": "nlmStatsLogNotificationsBumped"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.92.3.2.2",
+    "status": "current"
+  }
+}

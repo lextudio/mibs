@@ -1,0 +1,1246 @@
+{
+  "dot3": {
+    "class": "objectidentity",
+    "name": "dot3",
+    "oid": "1.3.6.1.2.1.10.7"
+  },
+  "dot3CollCount": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "dot3CollCount",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.5.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 16,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "dot3CollEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "IF-MIB",
+        "object": "ifIndex"
+      },
+      {
+        "implied": 0,
+        "module": "EtherLike-MIB",
+        "object": "dot3CollCount"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "dot3CollEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.7.5.1",
+    "status": "current"
+  },
+  "dot3CollFrequencies": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3CollFrequencies",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.5.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3CollTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "dot3CollTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.7.5",
+    "status": "current"
+  },
+  "dot3Compliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsBaseGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherDuplexGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsLowSpeedGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsHighSpeedGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherControlGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherControlPauseGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherCollisionTableGroup"
+      }
+    ],
+    "name": "dot3Compliance",
+    "oid": "1.3.6.1.2.1.35.2.2.3",
+    "status": "deprecated"
+  },
+  "dot3Compliance2": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsBaseGroup2"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherDuplexGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherRateControlGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsLowSpeedGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsHighSpeedGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsHalfDuplexGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherHCStatsGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherControlGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherHCControlGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherControlPauseGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherHCControlPauseGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherCollisionTableGroup"
+      }
+    ],
+    "name": "dot3Compliance2",
+    "oid": "1.3.6.1.2.1.35.2.2.4",
+    "status": "current"
+  },
+  "dot3ControlEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "dot3ControlEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.7.9.1",
+    "status": "current"
+  },
+  "dot3ControlFunctionsSupported": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3ControlFunctionsSupported",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.9.1.1",
+    "status": "current",
+    "syntax": {
+      "bits": {
+        "pause": 0
+      },
+      "class": "type",
+      "type": "Bits"
+    }
+  },
+  "dot3ControlInUnknownOpcodes": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3ControlInUnknownOpcodes",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.9.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3ControlTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "dot3ControlTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.7.9",
+    "status": "current"
+  },
+  "dot3ErrorInitError": {
+    "class": "objectidentity",
+    "name": "dot3ErrorInitError",
+    "oid": "1.3.6.1.2.1.10.7.7.1",
+    "status": "deprecated"
+  },
+  "dot3ErrorLoopbackError": {
+    "class": "objectidentity",
+    "name": "dot3ErrorLoopbackError",
+    "oid": "1.3.6.1.2.1.10.7.7.2",
+    "status": "deprecated"
+  },
+  "dot3Errors": {
+    "class": "objectidentity",
+    "name": "dot3Errors",
+    "oid": "1.3.6.1.2.1.10.7.7"
+  },
+  "dot3HCControlInUnknownOpcodes": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCControlInUnknownOpcodes",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.9.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCInPauseFrames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCInPauseFrames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.10.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCOutPauseFrames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCOutPauseFrames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.10.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCStatsAlignmentErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCStatsAlignmentErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.11.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCStatsEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "dot3HCStatsEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.7.11.1",
+    "status": "current"
+  },
+  "dot3HCStatsFCSErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCStatsFCSErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.11.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCStatsFrameTooLongs": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCStatsFrameTooLongs",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.11.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCStatsInternalMacReceiveErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCStatsInternalMacReceiveErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.11.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCStatsInternalMacTransmitErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCStatsInternalMacTransmitErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.11.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCStatsSymbolErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3HCStatsSymbolErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.11.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "dot3HCStatsTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "dot3HCStatsTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.7.11",
+    "status": "current"
+  },
+  "dot3InPauseFrames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3InPauseFrames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.10.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3OutPauseFrames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3OutPauseFrames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.10.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3PauseAdminMode": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "dot3PauseAdminMode",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.10.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 1,
+          "enabledRcv": 3,
+          "enabledXmit": 2,
+          "enabledXmitAndRcv": 4
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "dot3PauseEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "dot3PauseEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.7.10.1",
+    "status": "current"
+  },
+  "dot3PauseOperMode": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3PauseOperMode",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.10.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 1,
+          "enabledRcv": 3,
+          "enabledXmit": 2,
+          "enabledXmitAndRcv": 4
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "dot3PauseTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "dot3PauseTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.7.10",
+    "status": "current"
+  },
+  "dot3StatsAlignmentErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsAlignmentErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsCarrierSenseErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsCarrierSenseErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsDeferredTransmissions": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsDeferredTransmissions",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsDuplexStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsDuplexStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.19",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "fullDuplex": 3,
+          "halfDuplex": 2,
+          "unknown": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "dot3StatsEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "dot3StatsEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.7.2.1",
+    "status": "current"
+  },
+  "dot3StatsEtherChipSet": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsEtherChipSet",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.17",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "dot3StatsExcessiveCollisions": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsExcessiveCollisions",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsFCSErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsFCSErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsFrameTooLongs": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsFrameTooLongs",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.13",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InterfaceIndex"
+    }
+  },
+  "dot3StatsInternalMacReceiveErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsInternalMacReceiveErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.16",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsInternalMacTransmitErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsInternalMacTransmitErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsLateCollisions": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsLateCollisions",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsMultipleCollisionFrames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsMultipleCollisionFrames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsRateControlAbility": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsRateControlAbility",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.20",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TruthValue"
+    }
+  },
+  "dot3StatsRateControlStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsRateControlStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.21",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "rateControlOff": 1,
+          "rateControlOn": 2,
+          "unknown": 3
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "dot3StatsSQETestErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsSQETestErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsSingleCollisionFrames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsSingleCollisionFrames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsSymbolErrors": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "dot3StatsSymbolErrors",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.7.2.1.18",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "dot3StatsTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "dot3StatsTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.7.2",
+    "status": "current"
+  },
+  "dot3TestLoopBack": {
+    "class": "objectidentity",
+    "name": "dot3TestLoopBack",
+    "oid": "1.3.6.1.2.1.10.7.6.2",
+    "status": "deprecated"
+  },
+  "dot3TestTdr": {
+    "class": "objectidentity",
+    "name": "dot3TestTdr",
+    "oid": "1.3.6.1.2.1.10.7.6.1",
+    "status": "deprecated"
+  },
+  "dot3Tests": {
+    "class": "objectidentity",
+    "name": "dot3Tests",
+    "oid": "1.3.6.1.2.1.10.7.6"
+  },
+  "ether100MbsCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStats100MbsGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherCollisionTableGroup"
+      }
+    ],
+    "name": "ether100MbsCompliance",
+    "oid": "1.3.6.1.2.1.35.2.2.2",
+    "status": "deprecated"
+  },
+  "etherCollisionTableGroup": {
+    "class": "objectgroup",
+    "name": "etherCollisionTableGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3CollFrequencies"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.2",
+    "status": "current"
+  },
+  "etherCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherStatsGroup"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "etherCollisionTableGroup"
+      }
+    ],
+    "name": "etherCompliance",
+    "oid": "1.3.6.1.2.1.35.2.2.1",
+    "status": "deprecated"
+  },
+  "etherCompliances": {
+    "class": "objectidentity",
+    "name": "etherCompliances",
+    "oid": "1.3.6.1.2.1.35.2.2"
+  },
+  "etherConformance": {
+    "class": "objectidentity",
+    "name": "etherConformance",
+    "oid": "1.3.6.1.2.1.35.2"
+  },
+  "etherControlGroup": {
+    "class": "objectgroup",
+    "name": "etherControlGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3ControlFunctionsSupported"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3ControlInUnknownOpcodes"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.8",
+    "status": "current"
+  },
+  "etherControlPauseGroup": {
+    "class": "objectgroup",
+    "name": "etherControlPauseGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3PauseAdminMode"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3PauseOperMode"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3InPauseFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3OutPauseFrames"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.9",
+    "status": "current"
+  },
+  "etherDuplexGroup": {
+    "class": "objectgroup",
+    "name": "etherDuplexGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsDuplexStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.7",
+    "status": "current"
+  },
+  "etherGroups": {
+    "class": "objectidentity",
+    "name": "etherGroups",
+    "oid": "1.3.6.1.2.1.35.2.1"
+  },
+  "etherHCControlGroup": {
+    "class": "objectgroup",
+    "name": "etherHCControlGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCControlInUnknownOpcodes"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.13",
+    "status": "current"
+  },
+  "etherHCControlPauseGroup": {
+    "class": "objectgroup",
+    "name": "etherHCControlPauseGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCInPauseFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCOutPauseFrames"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.14",
+    "status": "current"
+  },
+  "etherHCStatsGroup": {
+    "class": "objectgroup",
+    "name": "etherHCStatsGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCStatsAlignmentErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCStatsFCSErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCStatsInternalMacTransmitErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCStatsFrameTooLongs"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCStatsInternalMacReceiveErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3HCStatsSymbolErrors"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.12",
+    "status": "current"
+  },
+  "etherMIB": {
+    "class": "moduleidentity",
+    "name": "etherMIB",
+    "oid": "1.3.6.1.2.1.35",
+    "revisions": [
+      {
+        "description": "Updated to include support for 10 Gb/sec interfaces. This resulted in the following revisions: - Updated dot3StatsAlignmentErrors and dot3StatsSymbolErrors DESCRIPTIONs to reflect behaviour at 10 Gb/s - Added dot3StatsRateControlAbility and dot3RateControlStatus for management of the Rate Control function in 10 Gb/s WAN applications - Added 64-bit versions of all counters that are used on high-speed ethernet interfaces - Added object groups to contain the new objects - Deprecated etherStatsBaseGroup and split into etherStatsBaseGroup2 and etherStatsHalfDuplexGroup, so that interfaces which can only operate at full-duplex do not need to implement half-duplex-only statistics - Deprecated dot3Compliance and replaced it with dot3Compliance2, which includes the compliance information for the new object groups In addition, the dot3Tests and dot3Errors object identities have been deprecated, since there is no longer a standard method for using them. This version published as RFC 3635.",
+        "revision": "2003-09-19 00:00"
+      },
+      {
+        "description": "Updated to include support for 1000 Mb/sec interfaces and full-duplex interfaces. This version published as RFC 2665.",
+        "revision": "1999-08-24 04:00"
+      },
+      {
+        "description": "Updated to include support for 100 Mb/sec interfaces. This version published as RFC 2358.",
+        "revision": "1998-06-03 21:50"
+      },
+      {
+        "description": "Initial version, published as RFC 1650.",
+        "revision": "1994-02-03 04:00"
+      }
+    ]
+  },
+  "etherMIBObjects": {
+    "class": "objectidentity",
+    "name": "etherMIBObjects",
+    "oid": "1.3.6.1.2.1.35.1"
+  },
+  "etherRateControlGroup": {
+    "class": "objectgroup",
+    "name": "etherRateControlGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsRateControlAbility"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsRateControlStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.15",
+    "status": "current"
+  },
+  "etherStats100MbsGroup": {
+    "class": "objectgroup",
+    "name": "etherStats100MbsGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsAlignmentErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFCSErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSingleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsMultipleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsDeferredTransmissions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsLateCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsExcessiveCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacTransmitErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsCarrierSenseErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFrameTooLongs"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacReceiveErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsEtherChipSet"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSymbolErrors"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.3",
+    "status": "deprecated"
+  },
+  "etherStatsBaseGroup": {
+    "class": "objectgroup",
+    "name": "etherStatsBaseGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsAlignmentErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFCSErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSingleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsMultipleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsDeferredTransmissions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsLateCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsExcessiveCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacTransmitErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsCarrierSenseErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFrameTooLongs"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacReceiveErrors"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.4",
+    "status": "deprecated"
+  },
+  "etherStatsBaseGroup2": {
+    "class": "objectgroup",
+    "name": "etherStatsBaseGroup2",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsAlignmentErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFCSErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacTransmitErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFrameTooLongs"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacReceiveErrors"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.10",
+    "status": "current"
+  },
+  "etherStatsGroup": {
+    "class": "objectgroup",
+    "name": "etherStatsGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsIndex"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsAlignmentErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFCSErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSingleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsMultipleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSQETestErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsDeferredTransmissions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsLateCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsExcessiveCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacTransmitErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsCarrierSenseErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsFrameTooLongs"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsInternalMacReceiveErrors"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsEtherChipSet"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.1",
+    "status": "deprecated"
+  },
+  "etherStatsHalfDuplexGroup": {
+    "class": "objectgroup",
+    "name": "etherStatsHalfDuplexGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSingleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsMultipleCollisionFrames"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsDeferredTransmissions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsLateCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsExcessiveCollisions"
+      },
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsCarrierSenseErrors"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.11",
+    "status": "current"
+  },
+  "etherStatsHighSpeedGroup": {
+    "class": "objectgroup",
+    "name": "etherStatsHighSpeedGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSymbolErrors"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.6",
+    "status": "current"
+  },
+  "etherStatsLowSpeedGroup": {
+    "class": "objectgroup",
+    "name": "etherStatsLowSpeedGroup",
+    "objects": [
+      {
+        "module": "EtherLike-MIB",
+        "object": "dot3StatsSQETestErrors"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.35.2.1.5",
+    "status": "current"
+  },
+  "imports": {
+    "IF-MIB": [
+      "InterfaceIndex",
+      "ifIndex"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2",
+      "transmission"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION",
+      "TruthValue"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/EtherLike-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:26 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "EtherLike-MIB"
+  }
+}

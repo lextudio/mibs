@@ -1,0 +1,672 @@
+{
+  "AgentxTAddress": {
+    "class": "textualconvention",
+    "name": "AgentxTAddress",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "OCTET STRING"
+    }
+  },
+  "agentxConformance": {
+    "class": "objectidentity",
+    "name": "agentxConformance",
+    "oid": "1.3.6.1.2.1.74.2"
+  },
+  "agentxConnIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "agentxConnIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.2.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "agentxConnOpenTime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxConnOpenTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.2.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "agentxConnTableLastChange": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxConnTableLastChange",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.74.1.2.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "agentxConnTransportAddress": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxConnTransportAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.2.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "AgentxTAddress"
+    }
+  },
+  "agentxConnTransportDomain": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxConnTransportDomain",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.2.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TDomain"
+    }
+  },
+  "agentxConnection": {
+    "class": "objectidentity",
+    "name": "agentxConnection",
+    "oid": "1.3.6.1.2.1.74.1.2"
+  },
+  "agentxConnectionEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "AGENTX-MIB",
+        "object": "agentxConnIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "agentxConnectionEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.74.1.2.2.1",
+    "status": "current"
+  },
+  "agentxConnectionTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "agentxConnectionTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.74.1.2.2",
+    "status": "current"
+  },
+  "agentxDefaultTimeout": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "5"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "agentxDefaultTimeout",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.74.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "INTEGER"
+    },
+    "units": "seconds"
+  },
+  "agentxGeneral": {
+    "class": "objectidentity",
+    "name": "agentxGeneral",
+    "oid": "1.3.6.1.2.1.74.1.1"
+  },
+  "agentxMIB": {
+    "class": "moduleidentity",
+    "name": "agentxMIB",
+    "oid": "1.3.6.1.2.1.74",
+    "revisions": [
+      {
+        "description": "Initial version published as RFC 2742.",
+        "revision": "2000-01-10 00:00"
+      }
+    ]
+  },
+  "agentxMIBCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxMIBGroup"
+      }
+    ],
+    "name": "agentxMIBCompliance",
+    "oid": "1.3.6.1.2.1.74.2.2.1",
+    "status": "current"
+  },
+  "agentxMIBCompliances": {
+    "class": "objectidentity",
+    "name": "agentxMIBCompliances",
+    "oid": "1.3.6.1.2.1.74.2.2"
+  },
+  "agentxMIBGroup": {
+    "class": "objectgroup",
+    "name": "agentxMIBGroup",
+    "objects": [
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxDefaultTimeout"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxMasterAgentXVer"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxConnTableLastChange"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxConnOpenTime"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxConnTransportDomain"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxConnTransportAddress"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionTableLastChange"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionTimeout"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionObjectID"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionDescr"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionAdminStatus"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionOpenTime"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionAgentXVer"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegistrationTableLastChange"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegContext"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegStart"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegRangeSubId"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegUpperBound"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegPriority"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegTimeout"
+      },
+      {
+        "module": "AGENTX-MIB",
+        "object": "agentxRegInstance"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.74.2.1.1",
+    "status": "current"
+  },
+  "agentxMIBGroups": {
+    "class": "objectidentity",
+    "name": "agentxMIBGroups",
+    "oid": "1.3.6.1.2.1.74.2.1"
+  },
+  "agentxMasterAgentXVer": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxMasterAgentXVer",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.74.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 255,
+            "min": 1
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "agentxObjects": {
+    "class": "objectidentity",
+    "name": "agentxObjects",
+    "oid": "1.3.6.1.2.1.74.1"
+  },
+  "agentxRegContext": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegContext",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "agentxRegIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "agentxRegIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "agentxRegInstance": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegInstance",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TruthValue"
+    }
+  },
+  "agentxRegPriority": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegPriority",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "agentxRegRangeSubId": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegRangeSubId",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "agentxRegStart": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegStart",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "agentxRegTimeout": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegTimeout",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "INTEGER"
+    },
+    "units": "seconds"
+  },
+  "agentxRegUpperBound": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegUpperBound",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Unsigned32"
+    }
+  },
+  "agentxRegistration": {
+    "class": "objectidentity",
+    "name": "agentxRegistration",
+    "oid": "1.3.6.1.2.1.74.1.4"
+  },
+  "agentxRegistrationEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "AGENTX-MIB",
+        "object": "agentxConnIndex"
+      },
+      {
+        "implied": 0,
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionIndex"
+      },
+      {
+        "implied": 0,
+        "module": "AGENTX-MIB",
+        "object": "agentxRegIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "agentxRegistrationEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.74.1.4.2.1",
+    "status": "current"
+  },
+  "agentxRegistrationTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "agentxRegistrationTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.74.1.4.2",
+    "status": "current"
+  },
+  "agentxRegistrationTableLastChange": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxRegistrationTableLastChange",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.74.1.4.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "agentxSession": {
+    "class": "objectidentity",
+    "name": "agentxSession",
+    "oid": "1.3.6.1.2.1.74.1.3"
+  },
+  "agentxSessionAdminStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "agentxSessionAdminStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "down": 2,
+          "up": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "agentxSessionAgentXVer": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxSessionAgentXVer",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 255,
+            "min": 1
+          }
+        ]
+      },
+      "type": "INTEGER"
+    }
+  },
+  "agentxSessionDescr": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxSessionDescr",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "agentxSessionEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "AGENTX-MIB",
+        "object": "agentxConnIndex"
+      },
+      {
+        "implied": 0,
+        "module": "AGENTX-MIB",
+        "object": "agentxSessionIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "agentxSessionEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1",
+    "status": "current"
+  },
+  "agentxSessionIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "agentxSessionIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "agentxSessionObjectID": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxSessionObjectID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "agentxSessionOpenTime": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxSessionOpenTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "agentxSessionTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "agentxSessionTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.74.1.3.2",
+    "status": "current"
+  },
+  "agentxSessionTableLastChange": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxSessionTableLastChange",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.2.1.74.1.3.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeStamp"
+    }
+  },
+  "agentxSessionTimeout": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "agentxSessionTimeout",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.74.1.3.2.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "INTEGER"
+    },
+    "units": "seconds"
+  },
+  "imports": {
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TDomain",
+      "TEXTUAL-CONVENTION",
+      "TimeStamp",
+      "TruthValue"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/AGENTX-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:24 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "AGENTX-MIB"
+  }
+}

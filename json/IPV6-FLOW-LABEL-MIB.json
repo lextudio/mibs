@@ -1,0 +1,93 @@
+{
+  "IPv6FlowLabel": {
+    "class": "textualconvention",
+    "displayhint": "d",
+    "name": "IPv6FlowLabel",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 1048575,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "Integer32"
+    }
+  },
+  "IPv6FlowLabelOrAny": {
+    "class": "textualconvention",
+    "displayhint": "d",
+    "name": "IPv6FlowLabelOrAny",
+    "status": "current",
+    "type": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": -1,
+            "min": -1
+          },
+          {
+            "max": 1048575,
+            "min": 0
+          }
+        ]
+      },
+      "tcbase": false,
+      "type": "Integer32"
+    }
+  },
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "ipv6FlowLabelMIB": {
+    "class": "moduleidentity",
+    "name": "ipv6FlowLabelMIB",
+    "oid": "1.3.6.1.2.1.103",
+    "revisions": [
+      {
+        "description": "Initial version, published as RFC 3595.",
+        "revision": "2003-08-28 00:00"
+      }
+    ]
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/IPV6-FLOW-LABEL-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:29 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "IPV6-FLOW-LABEL-MIB"
+  }
+}

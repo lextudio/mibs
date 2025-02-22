@@ -1,0 +1,530 @@
+{
+  "disk": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-SNMP-MIB-OLD",
+        "object": "diskIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "disk",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.6",
+    "status": "mandatory"
+  },
+  "diskAvail": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskAvail",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.7",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "diskDevice": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskDevice",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "diskErrorFlag": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskErrorFlag",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.100",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "diskErrorMsg": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskErrorMsg",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.101",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "diskIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "diskMinPercent": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskMinPercent",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.5",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "diskMinimum": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskMinimum",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "diskPath": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskPath",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "diskPercent": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskPercent",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.9",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "diskTotal": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskTotal",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.6",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "diskUsed": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskUsed",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.6.8",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "extensible": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-SNMP-MIB-OLD",
+        "object": "extensibleIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "extensible",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.3",
+    "status": "mandatory"
+  },
+  "extensibleCommand": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "extensibleCommand",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.3.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "extensibleErrFix": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "extensibleErrFix",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.3.102",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "extensibleIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "extensibleIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.3.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "extensibleNames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "extensibleNames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.3.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "extensibleOutput": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "extensibleOutput",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.3.101",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "extensibleResult": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "extensibleResult",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.3.100",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "UCD-SNMP-MIB": [
+      "ucdavis"
+    ],
+    "class": "imports"
+  },
+  "loadaveConfig": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "loadaveConfig",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.7.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "loadaveErrMessage": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "loadaveErrMessage",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.7.101",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "loadaveErrorFlag": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "loadaveErrorFlag",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.7.100",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "loadaveIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "loadaveIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.7.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "loadaveLoad": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "loadaveLoad",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.7.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "loadaveNames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "loadaveNames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.7.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "loadaves": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-SNMP-MIB-OLD",
+        "object": "loadaveIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "loadaves",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.7",
+    "status": "mandatory"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/UCD-SNMP-MIB-OLD.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:38 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "UCD-SNMP-MIB-OLD"
+  },
+  "processCount": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "processCount",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.5",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "processErrFix": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "processErrFix",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.102",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "processErrMessage": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "processErrMessage",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.101",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "processErrorFlag": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "processErrorFlag",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.100",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "processIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "processIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "processMax": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "processMax",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "processMin": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "processMin",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "processNames": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "processNames",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.1.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "processes": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-SNMP-MIB-OLD",
+        "object": "processIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "processes",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.1",
+    "status": "mandatory"
+  }
+}

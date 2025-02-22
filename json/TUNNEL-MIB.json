@@ -1,0 +1,688 @@
+{
+  "imports": {
+    "IANAifType-MIB": [
+      "IANAtunnelType"
+    ],
+    "IF-MIB": [
+      "InterfaceIndexOrZero",
+      "ifIndex"
+    ],
+    "INET-ADDRESS-MIB": [
+      "InetAddress",
+      "InetAddressType"
+    ],
+    "IPV6-FLOW-LABEL-MIB": [
+      "IPv6FlowLabelOrAny"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "transmission"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "RowStatus",
+      "StorageType",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/TUNNEL-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:37 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "TUNNEL-MIB"
+  },
+  "tunnel": {
+    "class": "objectidentity",
+    "name": "tunnel",
+    "oid": "1.3.6.1.2.1.10.131.1.1"
+  },
+  "tunnelConfigEncapsMethod": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelConfigEncapsMethod",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2.1.3",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "IANAtunnelType"
+    }
+  },
+  "tunnelConfigEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelConfigLocalAddress"
+      },
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelConfigRemoteAddress"
+      },
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelConfigEncapsMethod"
+      },
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelConfigID"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "tunnelConfigEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2.1",
+    "status": "deprecated"
+  },
+  "tunnelConfigID": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelConfigID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2.1.4",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "tunnelConfigIfIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "tunnelConfigIfIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2.1.5",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "InterfaceIndexOrZero"
+    }
+  },
+  "tunnelConfigLocalAddress": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelConfigLocalAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2.1.1",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "tunnelConfigRemoteAddress": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelConfigRemoteAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2.1.2",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "tunnelConfigStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "tunnelConfigStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2.1.6",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "tunnelConfigTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelConfigTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.131.1.1.2",
+    "status": "deprecated"
+  },
+  "tunnelIfAddressType": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "tunnelIfAddressType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddressType"
+    }
+  },
+  "tunnelIfEncapsLimit": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "tunnelIfEncapsLimit",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": -1,
+            "min": -1
+          },
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "tunnelIfEncapsMethod": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "tunnelIfEncapsMethod",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "IANAtunnelType"
+    }
+  },
+  "tunnelIfEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "IF-MIB",
+        "object": "ifIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "tunnelIfEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1",
+    "status": "current"
+  },
+  "tunnelIfFlowLabel": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "tunnelIfFlowLabel",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "IPv6FlowLabelOrAny"
+    }
+  },
+  "tunnelIfHopLimit": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "tunnelIfHopLimit",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 0,
+            "min": 0
+          },
+          {
+            "max": 255,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "tunnelIfLocalAddress": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "tunnelIfLocalAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.1",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "tunnelIfLocalInetAddress": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "tunnelIfLocalInetAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddress"
+    }
+  },
+  "tunnelIfRemoteAddress": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "tunnelIfRemoteAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.2",
+    "status": "deprecated",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "tunnelIfRemoteInetAddress": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "tunnelIfRemoteInetAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddress"
+    }
+  },
+  "tunnelIfSecurity": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "tunnelIfSecurity",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "ipsec": 2,
+          "none": 1,
+          "other": 3
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "tunnelIfTOS": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "tunnelIfTOS",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 63,
+            "min": -2
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "tunnelIfTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelIfTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.131.1.1.1",
+    "status": "current"
+  },
+  "tunnelInetConfigAddressType": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelInetConfigAddressType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddressType"
+    }
+  },
+  "tunnelInetConfigEncapsMethod": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelInetConfigEncapsMethod",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "IANAtunnelType"
+    }
+  },
+  "tunnelInetConfigEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigAddressType"
+      },
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigLocalAddress"
+      },
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigRemoteAddress"
+      },
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigEncapsMethod"
+      },
+      {
+        "implied": 0,
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigID"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "tunnelInetConfigEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1",
+    "status": "current"
+  },
+  "tunnelInetConfigID": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelInetConfigID",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "tunnelInetConfigIfIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "tunnelInetConfigIfIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InterfaceIndexOrZero"
+    }
+  },
+  "tunnelInetConfigLocalAddress": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelInetConfigLocalAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddress"
+    }
+  },
+  "tunnelInetConfigRemoteAddress": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelInetConfigRemoteAddress",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "InetAddress"
+    }
+  },
+  "tunnelInetConfigStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "tunnelInetConfigStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "tunnelInetConfigStorageType": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "tunnelInetConfigStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "tunnelInetConfigTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "tunnelInetConfigTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.10.131.1.1.3",
+    "status": "current"
+  },
+  "tunnelMIB": {
+    "class": "moduleidentity",
+    "name": "tunnelMIB",
+    "oid": "1.3.6.1.2.1.10.131",
+    "revisions": [
+      {
+        "description": "IPv4-specific objects were deprecated, including tunnelIfLocalAddress, tunnelIfRemoteAddress, the tunnelConfigTable, and the tunnelMIBBasicGroup. Added IP version-agnostic objects that should be used instead, including tunnelIfAddressType, tunnelIfLocalInetAddress, tunnelIfRemoteInetAddress, the tunnelInetConfigTable, and the tunnelIMIBInetGroup. The new tunnelIfLocalInetAddress and tunnelIfRemoteInetAddress objects are read-write, rather than read-only. Updated DESCRIPTION clauses of existing version- agnostic objects (e.g., tunnelIfTOS) that contained IPv4-specific text to cover IPv6 as well. Added tunnelIfFlowLabel for tunnels over IPv6. The encapsulation method was previously an INTEGER type, and is now an IANA-maintained textual convention. Published as RFC 4087.",
+        "revision": "2005-05-16 00:00"
+      },
+      {
+        "description": "Initial version, published as RFC 2667.",
+        "revision": "1999-08-24 12:00"
+      }
+    ]
+  },
+  "tunnelMIBBasicGroup": {
+    "class": "objectgroup",
+    "name": "tunnelMIBBasicGroup",
+    "objects": [
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfLocalAddress"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfRemoteAddress"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfEncapsMethod"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfHopLimit"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfTOS"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfSecurity"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelConfigIfIndex"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelConfigStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.10.131.2.2.1",
+    "status": "deprecated"
+  },
+  "tunnelMIBCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelMIBBasicGroup"
+      }
+    ],
+    "name": "tunnelMIBCompliance",
+    "oid": "1.3.6.1.2.1.10.131.2.1.1",
+    "status": "deprecated"
+  },
+  "tunnelMIBCompliances": {
+    "class": "objectidentity",
+    "name": "tunnelMIBCompliances",
+    "oid": "1.3.6.1.2.1.10.131.2.1"
+  },
+  "tunnelMIBConformance": {
+    "class": "objectidentity",
+    "name": "tunnelMIBConformance",
+    "oid": "1.3.6.1.2.1.10.131.2"
+  },
+  "tunnelMIBGroups": {
+    "class": "objectidentity",
+    "name": "tunnelMIBGroups",
+    "oid": "1.3.6.1.2.1.10.131.2.2"
+  },
+  "tunnelMIBInetFullCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelMIBInetGroup"
+      }
+    ],
+    "name": "tunnelMIBInetFullCompliance",
+    "oid": "1.3.6.1.2.1.10.131.2.1.2",
+    "status": "current"
+  },
+  "tunnelMIBInetGroup": {
+    "class": "objectgroup",
+    "name": "tunnelMIBInetGroup",
+    "objects": [
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfAddressType"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfLocalInetAddress"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfRemoteInetAddress"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfEncapsMethod"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfEncapsLimit"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfHopLimit"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfTOS"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfFlowLabel"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelIfSecurity"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigIfIndex"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigStatus"
+      },
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelInetConfigStorageType"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.10.131.2.2.2",
+    "status": "current"
+  },
+  "tunnelMIBInetReadOnlyCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "TUNNEL-MIB",
+        "object": "tunnelMIBInetGroup"
+      }
+    ],
+    "name": "tunnelMIBInetReadOnlyCompliance",
+    "oid": "1.3.6.1.2.1.10.131.2.1.3",
+    "status": "current"
+  },
+  "tunnelMIBObjects": {
+    "class": "objectidentity",
+    "name": "tunnelMIBObjects",
+    "oid": "1.3.6.1.2.1.10.131.1"
+  }
+}

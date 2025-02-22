@@ -1,0 +1,116 @@
+{
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "enterprises",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/NET-SNMP-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:30 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "NET-SNMP-MIB"
+  },
+  "netSnmp": {
+    "class": "moduleidentity",
+    "name": "netSnmp",
+    "oid": "1.3.6.1.4.1.8072",
+    "revisions": [
+      {
+        "description": "First draft",
+        "revision": "2002-01-30 00:00"
+      }
+    ]
+  },
+  "netSnmpAgentOIDs": {
+    "class": "objectidentity",
+    "name": "netSnmpAgentOIDs",
+    "oid": "1.3.6.1.4.1.8072.3.2"
+  },
+  "netSnmpCompliances": {
+    "class": "objectidentity",
+    "name": "netSnmpCompliances",
+    "oid": "1.3.6.1.4.1.8072.5.1"
+  },
+  "netSnmpConformance": {
+    "class": "objectidentity",
+    "name": "netSnmpConformance",
+    "oid": "1.3.6.1.4.1.8072.5"
+  },
+  "netSnmpDomains": {
+    "class": "objectidentity",
+    "name": "netSnmpDomains",
+    "oid": "1.3.6.1.4.1.8072.3.3"
+  },
+  "netSnmpEnumerations": {
+    "class": "objectidentity",
+    "name": "netSnmpEnumerations",
+    "oid": "1.3.6.1.4.1.8072.3"
+  },
+  "netSnmpExperimental": {
+    "class": "objectidentity",
+    "name": "netSnmpExperimental",
+    "oid": "1.3.6.1.4.1.8072.9999"
+  },
+  "netSnmpGroups": {
+    "class": "objectidentity",
+    "name": "netSnmpGroups",
+    "oid": "1.3.6.1.4.1.8072.5.2"
+  },
+  "netSnmpModuleIDs": {
+    "class": "objectidentity",
+    "name": "netSnmpModuleIDs",
+    "oid": "1.3.6.1.4.1.8072.3.1"
+  },
+  "netSnmpNotificationObjects": {
+    "class": "objectidentity",
+    "name": "netSnmpNotificationObjects",
+    "oid": "1.3.6.1.4.1.8072.4.1"
+  },
+  "netSnmpNotificationPrefix": {
+    "class": "objectidentity",
+    "name": "netSnmpNotificationPrefix",
+    "oid": "1.3.6.1.4.1.8072.4"
+  },
+  "netSnmpNotifications": {
+    "class": "objectidentity",
+    "name": "netSnmpNotifications",
+    "oid": "1.3.6.1.4.1.8072.4.0"
+  },
+  "netSnmpObjects": {
+    "class": "objectidentity",
+    "name": "netSnmpObjects",
+    "oid": "1.3.6.1.4.1.8072.1"
+  },
+  "netSnmpPlaypen": {
+    "class": "objectidentity",
+    "name": "netSnmpPlaypen",
+    "oid": "1.3.6.1.4.1.8072.9999.9999"
+  }
+}

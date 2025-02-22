@@ -1,0 +1,1947 @@
+{
+  "imports": {
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso",
+      "mib-2"
+    ],
+    "SNMPv2-TC": [
+      "DateAndTime",
+      "DisplayString",
+      "PhysAddress",
+      "RowStatus",
+      "StorageType",
+      "TEXTUAL-CONVENTION",
+      "TimeInterval"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/DISMAN-SCRIPT-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:26 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "DISMAN-SCRIPT-MIB"
+  },
+  "scriptMIB": {
+    "class": "moduleidentity",
+    "name": "scriptMIB",
+    "oid": "1.3.6.1.2.1.64",
+    "revisions": [
+      {
+        "description": "Revised version, published as RFC 3165. This revision introduces several new objects: smScriptError, smScriptLastChange, smLaunchError, smLaunchLastChange, smLaunchRowExpireTime, smRunResultTime, and smRunErrorTime. The following existing objects were updated: the maximum value of smRunLifeTime now disables the timer, an autostart value was added to the smLaunchAdminStatus object, and a new expired state was added to the smLaunchOperStatus object. A new smScriptException notification has been added to support runtime error notifications. Created new conformance and compliance statements that take care of the new objects and notifications. Clarifications have been added in several places to remove ambiguities or contradictions that were discovered and reported by implementors.",
+        "revision": "2001-08-21 00:00"
+      },
+      {
+        "description": "Initial version, published as RFC 2592.",
+        "revision": "1999-02-22 18:00"
+      }
+    ]
+  },
+  "smCodeEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptName"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smCodeIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smCodeEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.64.1.3.2.1",
+    "status": "current"
+  },
+  "smCodeGroup": {
+    "class": "objectgroup",
+    "name": "smCodeGroup",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smCodeText"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smCodeRowStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.3",
+    "status": "current"
+  },
+  "smCodeIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smCodeIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "smCodeRowStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "smCodeRowStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "smCodeTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smCodeTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.64.1.3.2",
+    "status": "current"
+  },
+  "smCodeText": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "smCodeText",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 1024,
+            "min": 1
+          }
+        ]
+      },
+      "type": "OCTET STRING"
+    }
+  },
+  "smCompliance": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLanguageGroup"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptGroup"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchGroup"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunGroup"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smCodeGroup"
+      }
+    ],
+    "name": "smCompliance",
+    "oid": "1.3.6.1.2.1.64.3.1.1",
+    "status": "deprecated"
+  },
+  "smCompliance2": {
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLanguageGroup"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptGroup2"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchGroup2"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunGroup2"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smNotificationsGroup2"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smCodeGroup"
+      }
+    ],
+    "name": "smCompliance2",
+    "oid": "1.3.6.1.2.1.64.3.1.2",
+    "status": "current"
+  },
+  "smCompliances": {
+    "class": "objectidentity",
+    "name": "smCompliances",
+    "oid": "1.3.6.1.2.1.64.3.1"
+  },
+  "smConformance": {
+    "class": "objectidentity",
+    "name": "smConformance",
+    "oid": "1.3.6.1.2.1.64.3"
+  },
+  "smExtsnDescr": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smExtsnDescr",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.2.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "smExtsnEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLangIndex"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smExtsnIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smExtsnEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.64.1.2.1",
+    "status": "current"
+  },
+  "smExtsnExtension": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smExtsnExtension",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "smExtsnIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smExtsnIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "smExtsnRevision": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smExtsnRevision",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smExtsnTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smExtsnTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.64.1.2",
+    "status": "current"
+  },
+  "smExtsnVendor": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smExtsnVendor",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "smExtsnVersion": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smExtsnVersion",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smGroups": {
+    "class": "objectidentity",
+    "name": "smGroups",
+    "oid": "1.3.6.1.2.1.64.3.2"
+  },
+  "smLangDescr": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smLangDescr",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLangEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLangIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smLangEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.64.1.1.1",
+    "status": "current"
+  },
+  "smLangIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smLangIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "smLangLanguage": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smLangLanguage",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "smLangRevision": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smLangRevision",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLangTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smLangTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.64.1.1",
+    "status": "current"
+  },
+  "smLangVendor": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smLangVendor",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OBJECT IDENTIFIER"
+    }
+  },
+  "smLangVersion": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smLangVersion",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLanguageGroup": {
+    "class": "objectgroup",
+    "name": "smLanguageGroup",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLangLanguage"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLangVersion"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLangVendor"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLangRevision"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLangDescr"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smExtsnExtension"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smExtsnVersion"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smExtsnVendor"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smExtsnRevision"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smExtsnDescr"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.1",
+    "status": "current"
+  },
+  "smLaunchAdminStatus": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchAdminStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.12",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "autostart": 3,
+          "disabled": 2,
+          "enabled": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smLaunchArgument": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchArgument",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "smLaunchControl": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "4"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchControl",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "abort": 1,
+          "nop": 4,
+          "resume": 3,
+          "suspend": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smLaunchEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchName"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smLaunchEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1",
+    "status": "current"
+  },
+  "smLaunchError": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smLaunchError",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.17",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLaunchExpireTime": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "360000"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchExpireTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeInterval"
+    },
+    "units": "centi-seconds"
+  },
+  "smLaunchGroup": {
+    "class": "objectgroup",
+    "name": "smLaunchGroup",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchScriptOwner"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchScriptName"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchArgument"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchMaxRunning"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchMaxCompleted"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchLifeTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchExpireTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchStart"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchControl"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchAdminStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchOperStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchRunIndexNext"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchStorageType"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchRowStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.4",
+    "status": "deprecated"
+  },
+  "smLaunchGroup2": {
+    "class": "objectgroup",
+    "name": "smLaunchGroup2",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchScriptOwner"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchScriptName"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchArgument"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchMaxRunning"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchMaxCompleted"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchLifeTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchExpireTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchStart"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchControl"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchAdminStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchOperStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchRunIndexNext"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchStorageType"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchRowStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchError"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchLastChange"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchRowExpireTime"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.8",
+    "status": "current"
+  },
+  "smLaunchLastChange": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": "0000000000000000"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smLaunchLastChange",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.18",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DateAndTime"
+    }
+  },
+  "smLaunchLifeTime": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "360000"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchLifeTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeInterval"
+    },
+    "units": "centi-seconds"
+  },
+  "smLaunchMaxCompleted": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchMaxCompleted",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "smLaunchMaxRunning": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchMaxRunning",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 4294967295,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Unsigned32"
+    }
+  },
+  "smLaunchName": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smLaunchName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 1
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLaunchOperStatus": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smLaunchOperStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.13",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 2,
+          "enabled": 1,
+          "expired": 3
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smLaunchOwner": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smLaunchOwner",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLaunchRowExpireTime": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2147483647"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchRowExpireTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.19",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeInterval"
+    },
+    "units": "centi-seconds"
+  },
+  "smLaunchRowStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "smLaunchRowStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.16",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "smLaunchRunIndexNext": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smLaunchRunIndexNext",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.14",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "smLaunchScriptName": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchScriptName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLaunchScriptOwner": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "smLaunchScriptOwner",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smLaunchStart": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "0"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchStart",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "smLaunchStorageType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smLaunchStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.1.1.15",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "smLaunchTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smLaunchTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.64.1.4.1",
+    "status": "current"
+  },
+  "smNotifications": {
+    "class": "objectidentity",
+    "name": "smNotifications",
+    "oid": "1.3.6.1.2.1.64.2"
+  },
+  "smNotificationsGroup": {
+    "class": "notificationgroup",
+    "name": "smNotificationsGroup",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptAbort"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptResult"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.6",
+    "status": "deprecated"
+  },
+  "smNotificationsGroup2": {
+    "class": "notificationgroup",
+    "name": "smNotificationsGroup2",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptAbort"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptResult"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptException"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.10",
+    "status": "current"
+  },
+  "smObjects": {
+    "class": "objectidentity",
+    "name": "smObjects",
+    "oid": "1.3.6.1.2.1.64.1"
+  },
+  "smRunArgument": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunArgument",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "smRunControl": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "4"
+      }
+    },
+    "maxaccess": "read-write",
+    "name": "smRunControl",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "abort": 1,
+          "nop": 4,
+          "resume": 3,
+          "suspend": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smRunEndTime": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": "0000000000000000"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunEndTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DateAndTime"
+    }
+  },
+  "smRunEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smLaunchName"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smRunEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1",
+    "status": "current"
+  },
+  "smRunError": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunError",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "smRunErrorTime": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": "0000000000000000"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunErrorTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.13",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DateAndTime"
+    }
+  },
+  "smRunExitCode": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "1"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunExitCode",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "genericError": 9,
+          "halted": 2,
+          "invalidArgument": 7,
+          "languageError": 5,
+          "lifeTimeExceeded": 3,
+          "noError": 1,
+          "noResourcesLeft": 4,
+          "runtimeError": 6,
+          "securityViolation": 8
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smRunExpireTime": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "smRunExpireTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeInterval"
+    },
+    "units": "centi-seconds"
+  },
+  "smRunGroup": {
+    "class": "objectgroup",
+    "name": "smRunGroup",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunArgument"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunStartTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunEndTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunLifeTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunExpireTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunExitCode"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunResult"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunState"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunControl"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunError"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.5",
+    "status": "deprecated"
+  },
+  "smRunGroup2": {
+    "class": "objectgroup",
+    "name": "smRunGroup2",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunArgument"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunStartTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunEndTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunLifeTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunExpireTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunExitCode"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunResult"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunState"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunControl"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunError"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunResultTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunErrorTime"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.9",
+    "status": "current"
+  },
+  "smRunIndex": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smRunIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "smRunLifeTime": {
+    "class": "objecttype",
+    "maxaccess": "read-write",
+    "name": "smRunLifeTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "TimeInterval"
+    },
+    "units": "centi-seconds"
+  },
+  "smRunObjects": {
+    "class": "objectidentity",
+    "name": "smRunObjects",
+    "oid": "1.3.6.1.2.1.64.1.4"
+  },
+  "smRunResult": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunResult",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "smRunResultTime": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": "0000000000000000"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunResultTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.12",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DateAndTime"
+    }
+  },
+  "smRunStartTime": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": "0000000000000000"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smRunStartTime",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DateAndTime"
+    }
+  },
+  "smRunState": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "smRunState",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.4.2.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "aborting": 6,
+          "executing": 2,
+          "initializing": 1,
+          "resuming": 5,
+          "suspended": 4,
+          "suspending": 3,
+          "terminated": 7
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smRunTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smRunTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.64.1.4.2",
+    "status": "current"
+  },
+  "smScriptAbort": {
+    "class": "notificationtype",
+    "name": "smScriptAbort",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunExitCode"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunEndTime"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunError"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.2.0.1",
+    "status": "current"
+  },
+  "smScriptAdminStatus": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smScriptAdminStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 2,
+          "editing": 3,
+          "enabled": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smScriptDescr": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "smScriptDescr",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "smScriptEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptOwner"
+      },
+      {
+        "implied": 0,
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptName"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "smScriptEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1",
+    "status": "current"
+  },
+  "smScriptError": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smScriptError",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "SnmpAdminString"
+    }
+  },
+  "smScriptException": {
+    "class": "notificationtype",
+    "name": "smScriptException",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunError"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.2.0.3",
+    "status": "current"
+  },
+  "smScriptGroup": {
+    "class": "objectgroup",
+    "name": "smScriptGroup",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptDescr"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptLanguage"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptSource"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptAdminStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptOperStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptStorageType"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptRowStatus"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.2",
+    "status": "deprecated"
+  },
+  "smScriptGroup2": {
+    "class": "objectgroup",
+    "name": "smScriptGroup2",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptDescr"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptLanguage"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptSource"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptAdminStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptOperStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptStorageType"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptRowStatus"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptError"
+      },
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smScriptLastChange"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.3.2.7",
+    "status": "current"
+  },
+  "smScriptLanguage": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "smScriptLanguage",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "smScriptLastChange": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": "0000000000000000"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smScriptLastChange",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DateAndTime"
+    }
+  },
+  "smScriptName": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smScriptName",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 1
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smScriptObjects": {
+    "class": "objectidentity",
+    "name": "smScriptObjects",
+    "oid": "1.3.6.1.2.1.64.1.3"
+  },
+  "smScriptOperStatus": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-only",
+    "name": "smScriptOperStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.7",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "accessDenied": 7,
+          "compilationFailed": 10,
+          "compiling": 5,
+          "disabled": 2,
+          "editing": 3,
+          "enabled": 1,
+          "genericError": 14,
+          "noResourcesLeft": 11,
+          "noSuchScript": 6,
+          "protocolFailure": 13,
+          "retrieving": 4,
+          "unknownProtocol": 12,
+          "wrongLanguage": 8,
+          "wrongVersion": 9
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "smScriptOwner": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smScriptOwner",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 32,
+            "min": 0
+          }
+        ]
+      },
+      "type": "SnmpAdminString"
+    }
+  },
+  "smScriptResult": {
+    "class": "notificationtype",
+    "name": "smScriptResult",
+    "objects": [
+      {
+        "module": "DISMAN-SCRIPT-MIB",
+        "object": "smRunResult"
+      }
+    ],
+    "oid": "1.3.6.1.2.1.64.2.0.2",
+    "status": "current"
+  },
+  "smScriptRowStatus": {
+    "class": "objecttype",
+    "maxaccess": "read-create",
+    "name": "smScriptRowStatus",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "RowStatus"
+    }
+  },
+  "smScriptSource": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "OctetString",
+        "format": "hex",
+        "value": ""
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smScriptSource",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "smScriptStorageType": {
+    "class": "objecttype",
+    "default": {
+      "default": {
+        "basetype": "Integer32",
+        "format": "decimal",
+        "value": "2"
+      }
+    },
+    "maxaccess": "read-create",
+    "name": "smScriptStorageType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.2.1.64.1.3.1.1.8",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "StorageType"
+    }
+  },
+  "smScriptTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "smScriptTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.2.1.64.1.3.1",
+    "status": "current"
+  },
+  "smTraps": {
+    "class": "objectidentity",
+    "name": "smTraps",
+    "oid": "1.3.6.1.2.1.64.2.0"
+  }
+}

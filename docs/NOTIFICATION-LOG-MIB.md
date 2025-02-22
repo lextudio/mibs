@@ -1,0 +1,37 @@
+# NOTIFICATION-LOG-MIB
+
+## Objects
+
+This MIB module contains 31 accessible objects.
+
+- nlmConfigGlobalAgeOut (1.3.6.1.2.1.92.1.1.2) [Access: read-write]
+- nlmConfigGlobalEntryLimit (1.3.6.1.2.1.92.1.1.1) [Access: read-write]
+- nlmConfigLogAdminStatus (1.3.6.1.2.1.92.1.1.3.1.4) [Access: read-create]
+- nlmConfigLogEntryLimit (1.3.6.1.2.1.92.1.1.3.1.3) [Access: read-create]
+- nlmConfigLogEntryStatus (1.3.6.1.2.1.92.1.1.3.1.7) [Access: read-create]
+- nlmConfigLogFilterName (1.3.6.1.2.1.92.1.1.3.1.2) [Access: read-create]
+- nlmConfigLogOperStatus (1.3.6.1.2.1.92.1.1.3.1.5) [Access: read-only]
+- nlmConfigLogStorageType (1.3.6.1.2.1.92.1.1.3.1.6) [Access: read-create]
+- nlmLogContextEngineID (1.3.6.1.2.1.92.1.3.1.1.7) [Access: read-only]
+- nlmLogContextName (1.3.6.1.2.1.92.1.3.1.1.8) [Access: read-only]
+- nlmLogDateAndTime (1.3.6.1.2.1.92.1.3.1.1.3) [Access: read-only]
+- nlmLogEngineID (1.3.6.1.2.1.92.1.3.1.1.4) [Access: read-only]
+- nlmLogEngineTAddress (1.3.6.1.2.1.92.1.3.1.1.5) [Access: read-only]
+- nlmLogEngineTDomain (1.3.6.1.2.1.92.1.3.1.1.6) [Access: read-only]
+- nlmLogNotificationID (1.3.6.1.2.1.92.1.3.1.1.9) [Access: read-only]
+- nlmLogTime (1.3.6.1.2.1.92.1.3.1.1.2) [Access: read-only]
+- nlmLogVariableCounter32Val (1.3.6.1.2.1.92.1.3.2.1.4) [Access: read-only]
+- nlmLogVariableCounter64Val (1.3.6.1.2.1.92.1.3.2.1.11) [Access: read-only]
+- nlmLogVariableID (1.3.6.1.2.1.92.1.3.2.1.2) [Access: read-only]
+- nlmLogVariableInteger32Val (1.3.6.1.2.1.92.1.3.2.1.7) [Access: read-only]
+- nlmLogVariableIpAddressVal (1.3.6.1.2.1.92.1.3.2.1.9) [Access: read-only]
+- nlmLogVariableOctetStringVal (1.3.6.1.2.1.92.1.3.2.1.8) [Access: read-only]
+- nlmLogVariableOidVal (1.3.6.1.2.1.92.1.3.2.1.10) [Access: read-only]
+- nlmLogVariableOpaqueVal (1.3.6.1.2.1.92.1.3.2.1.12) [Access: read-only]
+- nlmLogVariableTimeTicksVal (1.3.6.1.2.1.92.1.3.2.1.6) [Access: read-only]
+- nlmLogVariableUnsigned32Val (1.3.6.1.2.1.92.1.3.2.1.5) [Access: read-only]
+- nlmLogVariableValueType (1.3.6.1.2.1.92.1.3.2.1.3) [Access: read-only]
+- nlmStatsGlobalNotificationsBumped (1.3.6.1.2.1.92.1.2.2) [Access: read-only]
+- nlmStatsGlobalNotificationsLogged (1.3.6.1.2.1.92.1.2.1) [Access: read-only]
+- nlmStatsLogNotificationsBumped (1.3.6.1.2.1.92.1.2.3.1.2) [Access: read-only]
+- nlmStatsLogNotificationsLogged (1.3.6.1.2.1.92.1.2.3.1.1) [Access: read-only]

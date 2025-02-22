@@ -1,0 +1,349 @@
+{
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "UCD-SNMP-MIB": [
+      "ucdExperimental"
+    ],
+    "class": "imports"
+  },
+  "ipfAccInBytes": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccInBytes",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.3.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "ipfAccInEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-IPFILTER-MIB",
+        "object": "ipfAccInIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "ipfAccInEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.2021.13.2.3.1",
+    "status": "current"
+  },
+  "ipfAccInHits": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccInHits",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.3.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "ipfAccInIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccInIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.3.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "ipfAccInRule": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccInRule",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.3.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "ipfAccInTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "ipfAccInTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.13.2.3",
+    "status": "current"
+  },
+  "ipfAccOutBytes": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccOutBytes",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.4.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "ipfAccOutEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-IPFILTER-MIB",
+        "object": "ipfAccOutIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "ipfAccOutEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.2021.13.2.4.1",
+    "status": "current"
+  },
+  "ipfAccOutHits": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccOutHits",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.4.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "ipfAccOutIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccOutIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.4.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "ipfAccOutRule": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfAccOutRule",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.4.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "ipfAccOutTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "ipfAccOutTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.13.2.4",
+    "status": "current"
+  },
+  "ipfInEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-IPFILTER-MIB",
+        "object": "ipfInIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "ipfInEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.2021.13.2.1.1",
+    "status": "current"
+  },
+  "ipfInHits": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfInHits",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "ipfInIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfInIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "ipfInRule": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfInRule",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "ipfInTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "ipfInTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.13.2.1",
+    "status": "current"
+  },
+  "ipfOutEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-IPFILTER-MIB",
+        "object": "ipfOutIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "ipfOutEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.2021.13.2.2.1",
+    "status": "current"
+  },
+  "ipfOutHits": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfOutHits",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.2.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "ipfOutIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfOutIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.2.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 2147483647,
+            "min": 1
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "ipfOutRule": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "ipfOutRule",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.2.2.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "ipfOutTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "ipfOutTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.13.2.2",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/UCD-IPFILTER-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:37 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "UCD-IPFILTER-MIB"
+  },
+  "ucdIpFilter": {
+    "class": "moduleidentity",
+    "name": "ucdIpFilter",
+    "oid": "1.3.6.1.4.1.2021.13.2",
+    "revisions": [
+      {
+        "description": "Renamed MIB root object",
+        "revision": "2000-01-26 00:00"
+      },
+      {
+        "description": "SMIv2 version converted from an older MIB definition.",
+        "revision": "1999-12-15 00:00"
+      }
+    ]
+  }
+}

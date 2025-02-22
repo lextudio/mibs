@@ -1,0 +1,248 @@
+{
+  "diskIODevice": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIODevice",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.2",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "DisplayString"
+    }
+  },
+  "diskIOEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "UCD-DISKIO-MIB",
+        "object": "diskIOIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "diskIOEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1",
+    "status": "current"
+  },
+  "diskIOIndex": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIOIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.1",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 65535,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "diskIOLA1": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIOLA1",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.9",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 100,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "diskIOLA15": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIOLA15",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.11",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 100,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "diskIOLA5": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIOLA5",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.10",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "max": 100,
+            "min": 0
+          }
+        ]
+      },
+      "type": "Integer32"
+    }
+  },
+  "diskIONRead": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIONRead",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.3",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "diskIONReadX": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIONReadX",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.12",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "diskIONWritten": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIONWritten",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.4",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "diskIONWrittenX": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIONWrittenX",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.13",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter64"
+    }
+  },
+  "diskIOReads": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIOReads",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.5",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "diskIOTable": {
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "name": "diskIOTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.2021.13.15.1",
+    "status": "current"
+  },
+  "diskIOWrites": {
+    "class": "objecttype",
+    "maxaccess": "read-only",
+    "name": "diskIOWrites",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.2021.13.15.1.1.6",
+    "status": "current",
+    "syntax": {
+      "class": "type",
+      "type": "Counter32"
+    }
+  },
+  "imports": {
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Counter32",
+      "Counter64",
+      "Gauge32",
+      "Integer32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Unsigned32",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "PhysAddress",
+      "TEXTUAL-CONVENTION"
+    ],
+    "UCD-SNMP-MIB": [
+      "ucdExperimental"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs-site/mibs/UCD-DISKIO-MIB.txt",
+      "Produced by pysmi-1.5.11 at Sat Feb 22 16:09:37 2025",
+      "On host MacBook-Pro.local platform Darwin version 24.3.0 by user lextm",
+      "Using Python version 3.12.7 (main, Nov  3 2024, 16:57:26) [Clang 15.0.0 (clang-1500.1.0.2.5)]"
+    ],
+    "module": "UCD-DISKIO-MIB"
+  },
+  "ucdDiskIOMIB": {
+    "class": "moduleidentity",
+    "name": "ucdDiskIOMIB",
+    "oid": "1.3.6.1.4.1.2021.13.15",
+    "revisions": [
+      {
+        "description": "Add 64 bit counters. Patch from Dan Nelson.",
+        "revision": "2005-04-20 00:00"
+      },
+      {
+        "description": "Add 1, 5 and 15-minute load average objects",
+        "revision": "2002-02-13 00:00"
+      },
+      {
+        "description": "SMIv2 version derived from older definitions contained in the VEST-INTERNETT-MIB module.",
+        "revision": "2000-01-26 00:00"
+      }
+    ]
+  }
+}
