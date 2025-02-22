@@ -2,8 +2,6 @@
 
 This site hosts a comprehensive collection of SNMP Management Information Base (MIB) documents that are compatible with [PySNMP](https://pysnmp.com), a widely-used SNMP engine implementation in Python. These MIB modules are essential for network management and monitoring applications built with PySNMP.
 
-Currently, this repository contains **{{ config.extra.mib_count }} MIB modules** with a total of **{{ config.extra.total_objects }} SNMP objects**.
-
 ## Why This Repository?
 
 Network management with PySNMP requires standardized MIB definitions to:
@@ -24,7 +22,7 @@ This repository provides ready-to-use, PySNMP-compatible MIB documents that have
 
 ## Getting Started
 
-1. Browse our [MIB collection](asn1.md) to find the MIB modules you need
+1. Browse our [MIB collection](mibs.md) to find the MIB modules you need
 2. Each MIB document includes:
    - Object names and their corresponding OIDs
    - Data types and value constraints
