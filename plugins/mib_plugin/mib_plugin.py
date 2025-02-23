@@ -1,5 +1,6 @@
 import os
 import json
+import shutil
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
 from mkdocs.structure.files import Files, File
@@ -104,7 +105,7 @@ class MibPlugin(BasePlugin):
         content += "</table>\n"
         
         # Add download link for original MIB document
-        content += f"\n[Download original MIB document](../asn1/{module_name}.txt)\n"
+        content += f"\n[Download original MIB document](../asn1/{module_name})\n"
         
         return content
 
@@ -137,3 +138,18 @@ class MibPlugin(BasePlugin):
             return '\n'.join(lines)
 
         return markdown
+
+    def on_post_build(self, config):
+        src_dir = os.path.join(config['docs_dir'], 'asn1')
+        dest_dir = os.path.join(config['site_dir'], 'asn1')
+        
+        if os.path.exists(src_dir):
+            if not os.path.exists(dest_dir):
+                os.makedirs(dest_dir)
+            for item in os.listdir(src_dir):
+                s = os.path.join(src_dir, item)
+                d = os.path.join(dest_dir, item)
+                if os.path.isdir(s):
+                    shutil.copytree(s, d, dirs_exist_ok=True)
+                else:
+                    shutil.copy2(s, d)

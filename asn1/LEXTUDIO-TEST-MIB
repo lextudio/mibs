@@ -1,0 +1,127 @@
+LEXTUDIO-TEST-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    Integer32, Unsigned32, OBJECT-TYPE, enterprises
+        FROM SNMPv2-SMI
+    DateAndTime, MacAddress, PhysAddress, RowStatus
+        FROM SNMPv2-TC;
+
+-- Define the base OID for LeXtudio without MODULE-IDENTITY
+lextudio OBJECT IDENTIFIER ::= { enterprises 60069 }
+
+-- Define the OID for test objects under LeXtudio
+testObjects OBJECT IDENTIFIER ::= { lextudio 9 }
+
+testDateAndTime OBJECT-TYPE
+    SYNTAX      DateAndTime
+    MAX-ACCESS  read-write
+    STATUS      current
+    DESCRIPTION
+        "A test scalar object representing the current date and time."
+    ::= { testObjects 5 }
+
+testPhysAddress OBJECT-TYPE
+    SYNTAX      PhysAddress
+    MAX-ACCESS  read-write
+    STATUS      current
+    DESCRIPTION
+        "A test object representing a physical address (e.g., MAC address)."
+    ::= { testObjects 6 }
+
+ScaledInteger ::= TEXTUAL-CONVENTION
+    DISPLAY-HINT "d-1"
+    STATUS       current
+    DESCRIPTION
+        "A integer value from 1 to 100 to indicate 
+        the appropriate value."
+    SYNTAX       Integer32 (1..100)
+
+testScaledInteger OBJECT-TYPE
+    SYNTAX      ScaledInteger
+    MAX-ACCESS  read-write
+    STATUS      current
+    DESCRIPTION
+        "A test object with display hint 'd-1'."
+    ::= { testObjects 7 }
+
+ScaledUnsigned ::= TEXTUAL-CONVENTION
+    DISPLAY-HINT "d-1"
+    STATUS       current
+    DESCRIPTION
+       "A integer value from 1 to 100 to indicate 
+       the appropriate value."
+    SYNTAX       Unsigned32 (1..100)
+
+testScaledUnsigned OBJECT-TYPE
+    SYNTAX      ScaledUnsigned
+    MAX-ACCESS  read-write
+    STATUS      current
+    DESCRIPTION
+        "A test object with display hint 'd-1'."
+    ::= { testObjects 8 }
+
+testMacAddress OBJECT-TYPE
+    SYNTAX      MacAddress
+    MAX-ACCESS  read-write
+    STATUS      current
+    DESCRIPTION
+        "A test object with fixed length of 6."
+    ::= { testObjects 9 }
+
+SdpBindId ::= TEXTUAL-CONVENTION
+    STATUS          current
+    DESCRIPTION     "The value used to uniquely identify an SDP Binding.
+                     The first four octets correspond to the zero-extended
+                     16-bit SDP ID, while the remaining four octets
+                     correspond to the 32-bit VC ID, both encoded in network
+                     byte order."
+    SYNTAX          OCTET STRING (SIZE (8))
+
+testSdpBindId OBJECT-TYPE
+    SYNTAX      SdpBindId
+    MAX-ACCESS  read-write
+    STATUS      current
+    DESCRIPTION
+        "A test object with fixed length of 8."
+    DEFVAL      { '0'H }
+    ::= { testObjects 10 }
+
+macAddressTable OBJECT-TYPE
+    SYNTAX SEQUENCE OF MacAddressTableEntry
+    MAX-ACCESS not-accessible
+    STATUS current
+    ::= { testObjects 101 }
+
+macAddressTableEntry OBJECT-TYPE
+    SYNTAX MacAddressTableEntry
+    MAX-ACCESS not-accessible
+    STATUS current
+    INDEX {macAddressIndex}
+    ::= { macAddressTable 1 }
+
+MacAddressTableEntry ::= SEQUENCE
+   {
+      macAddressIndex          MacAddress,
+      macAddressName           PhysAddress,
+      macAddressRowStatus      RowStatus
+   }
+
+macAddressIndex OBJECT-TYPE
+    SYNTAX MacAddress
+    MAX-ACCESS not-accessible
+    STATUS current
+    ::= { macAddressTableEntry 1 }
+
+macAddressName OBJECT-TYPE
+    SYNTAX PhysAddress
+    MAX-ACCESS read-create
+    STATUS current
+    ::= { macAddressTableEntry 2 }
+
+macAddressRowStatus  OBJECT-TYPE
+    SYNTAX RowStatus
+    MAX-ACCESS read-create
+    STATUS current
+    ::= { macAddressTableEntry 3 }
+
+END

@@ -1,0 +1,982 @@
+{
+  "enterprises": {
+    "class": "objectidentity",
+    "name": "enterprises",
+    "oid": "1.3.6.1.4.1"
+  },
+  "fibronics": {
+    "class": "objectidentity",
+    "name": "fibronics",
+    "oid": "1.3.6.1.4.1.22"
+  },
+  "fm800": {
+    "class": "objectidentity",
+    "name": "fm800",
+    "oid": "1.3.6.1.4.1.22.51"
+  },
+  "fmDebugReadEeprom": {
+    "class": "objecttype",
+    "description": "Reads bytes from Eeprom",
+    "maxaccess": "read-only",
+    "name": "fmDebugReadEeprom",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.6.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "fmDebugReadMem": {
+    "class": "objecttype",
+    "description": "Reads the bytes from the memory",
+    "maxaccess": "read-only",
+    "name": "fmDebugReadMem",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.6.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "fmDiagDebug": {
+    "class": "objecttype",
+    "description": "This object is for factory use only. Users must not write into this variable or improper operation can occur.",
+    "maxaccess": "read-write",
+    "name": "fmDiagDebug",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.5.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "debug-mode": 2,
+          "normal-mode": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmDiagDeleteFaults": {
+    "class": "objecttype",
+    "description": "setting this object to delete(2) causes the fault table in the e2 and it\u0027s ram image to be initialized, setting the object to no-delete(1) does not effect the fault table. when reading the object the value no-delete(1) will always be returned",
+    "maxaccess": "read-write",
+    "name": "fmDiagDeleteFaults",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.5.5",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "delete": 2,
+          "no-delete": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmDiagDownloadTrap": {
+    "class": "notificationtype",
+    "description": "This trap is send before starting downloading",
+    "name": "fmDiagDownloadTrap",
+    "objects": [
+      {
+        "module": "Hub-facs-prvt",
+        "object": "fmSystemLastSourceIpAddr"
+      },
+      {
+        "module": "Hub-facs-prvt",
+        "object": "fmSystemLastDestinationIpAddr"
+      }
+    ],
+    "oid": "1.3.6.1.4.1.22.51.0.31"
+  },
+  "fmDiagFaultEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "Hub-facs-prvt",
+        "object": "fmDiagFaultIndex"
+      }
+    ],
+    "maxaccess": "not-accessible",
+    "name": "fmDiagFaultEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.22.51.5.3.1",
+    "status": "optional"
+  },
+  "fmDiagFaultIndex": {
+    "class": "objecttype",
+    "description": "The fault index in the fault table",
+    "maxaccess": "read-only",
+    "name": "fmDiagFaultIndex",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.51.5.3.1.1",
+    "status": "optional",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "fmDiagFaultReport": {
+    "class": "objecttype",
+    "description": "Get the faults detected by the agent",
+    "maxaccess": "read-only",
+    "name": "fmDiagFaultReport",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.51.5.3.1.2",
+    "status": "optional",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "fmDiagFaultTable": {
+    "class": "objecttype",
+    "description": "Table of fault reports from the agent",
+    "maxaccess": "not-accessible",
+    "name": "fmDiagFaultTable",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.22.51.5.3",
+    "status": "optional"
+  },
+  "fmDiagGenericTrap": {
+    "class": "notificationtype",
+    "description": "Generic Trap information",
+    "name": "fmDiagGenericTrap",
+    "objects": [
+      {
+        "module": "Hub-facs-prvt",
+        "object": "fmDiagTrapInfo"
+      }
+    ],
+    "oid": "1.3.6.1.4.1.22.51.0.30"
+  },
+  "fmDiagTrapInfo": {
+    "class": "objecttype",
+    "description": "Used for generic traps. The first word is the trap code. The rest of the string is the extra information. Contains CR and LF char.",
+    "maxaccess": "read-only",
+    "name": "fmDiagTrapInfo",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.5.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "max": 255,
+            "min": 0
+          }
+        ]
+      },
+      "type": "DisplayString"
+    }
+  },
+  "fmSystemBootFile": {
+    "class": "objecttype",
+    "description": "Path and file name that is sent as a TFTP request",
+    "maxaccess": "read-only",
+    "name": "fmSystemBootFile",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.11",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "fmSystemDownLoad": {
+    "class": "objecttype",
+    "description": "Downloading the EDB. When reading the instance of this object the value has no meaning.",
+    "maxaccess": "read-write",
+    "name": "fmSystemDownLoad",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.13",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "download": 1,
+          "meaning-less-value": 127
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmSystemFileServer": {
+    "class": "objecttype",
+    "description": "IP address to which a TFTP for boot is sent.",
+    "maxaccess": "read-write",
+    "name": "fmSystemFileServer",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.10",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemIPDefGway": {
+    "class": "objecttype",
+    "description": "Default Gateway Address",
+    "maxaccess": "read-only",
+    "name": "fmSystemIPDefGway",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.9",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemIPNetMask": {
+    "class": "objecttype",
+    "description": "IP Network Mask",
+    "maxaccess": "read-only",
+    "name": "fmSystemIPNetMask",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.8",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemIpAddr": {
+    "class": "objecttype",
+    "description": "IP address of the agent",
+    "maxaccess": "read-only",
+    "name": "fmSystemIpAddr",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.7",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemLastDestinationIpAddr": {
+    "class": "objecttype",
+    "description": "The destination IP address in the the last IP message. It may be either fmSystemIpAddr or fmSystemSlipIpAddr",
+    "maxaccess": "read-only",
+    "name": "fmSystemLastDestinationIpAddr",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.21",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemLastSourceIpAddr": {
+    "class": "objecttype",
+    "description": "The source IP address, extracted from the last IP message",
+    "maxaccess": "read-only",
+    "name": "fmSystemLastSourceIpAddr",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.20",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemReset": {
+    "class": "objecttype",
+    "description": "Resetting the CARD. When reading the instance of this object the value has no meaning. cold reset is performed with selftest , while warm start is performed without selftest",
+    "maxaccess": "read-write",
+    "name": "fmSystemReset",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "cold-reset": 0,
+          "meaning-less-value": 127,
+          "power-up": 2,
+          "warm-reset": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmSystemSelfTestLevel": {
+    "class": "objecttype",
+    "description": "Type of self test to be executed upon cold-reset",
+    "maxaccess": "read-write",
+    "name": "fmSystemSelfTestLevel",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.5",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "extended": 3,
+          "full": 2,
+          "none": 0,
+          "partial": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmSystemSlipBaudRate": {
+    "class": "objecttype",
+    "description": "SLIP Baud rate This is object is available only when slip interface exist ",
+    "maxaccess": "read-only",
+    "name": "fmSystemSlipBaudRate",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.16",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "baud1200": 0,
+          "baud19200": 4,
+          "baud2400": 1,
+          "baud38400": 5,
+          "baud4800": 2,
+          "baud9600": 3
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmSystemSlipIPNetMask": {
+    "class": "objecttype",
+    "description": "SLIP IP Network Mask This is object is available only when slip interface exist ",
+    "maxaccess": "read-only",
+    "name": "fmSystemSlipIPNetMask",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.15",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemSlipIpAddr": {
+    "class": "objecttype",
+    "description": "SLIP IP address. This is object is available only when slip interface exist ",
+    "maxaccess": "read-only",
+    "name": "fmSystemSlipIpAddr",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.14",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "fmSystemSlipParity": {
+    "class": "objecttype",
+    "description": "SLIP Parity This is object is available only when slip interface exist ",
+    "maxaccess": "read-only",
+    "name": "fmSystemSlipParity",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.17",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "even": 2,
+          "none": 0,
+          "odd": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmSystemSlipStopBits": {
+    "class": "objecttype",
+    "description": "SLIP Stop Bits This is object is available only when slip interface exist ",
+    "maxaccess": "read-only",
+    "name": "fmSystemSlipStopBits",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.1.18",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "one": 0,
+          "two": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "fmdebug": {
+    "class": "objectidentity",
+    "name": "fmdebug",
+    "oid": "1.3.6.1.4.1.22.51.6"
+  },
+  "fmdiag": {
+    "class": "objectidentity",
+    "name": "fmdiag",
+    "oid": "1.3.6.1.4.1.22.51.5"
+  },
+  "fmsystem": {
+    "class": "objectidentity",
+    "name": "fmsystem",
+    "oid": "1.3.6.1.4.1.22.51.1"
+  },
+  "fmsystemperm": {
+    "class": "objectidentity",
+    "name": "fmsystemperm",
+    "oid": "1.3.6.1.4.1.22.51.1.2"
+  },
+  "fmsystemrun": {
+    "class": "objectidentity",
+    "name": "fmsystemrun",
+    "oid": "1.3.6.1.4.1.22.51.1.1"
+  },
+  "imports": {
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "mgmt",
+      "Gauge32",
+      "TimeTicks",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "iso",
+      "NOTIFICATION-TYPE",
+      "Integer32",
+      "Counter64",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "Counter32",
+      "IpAddress",
+      "TRAP-TYPE",
+      "OBJECT-TYPE",
+      "internet",
+      "Unsigned32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ],
+    "class": "imports"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///Users/lextm/pysnmp.com/mibs.pysnmp.com/asn1/Hub-facs-prvt",
+      "Produced by pysmi-1.3.3 at Sun Mar 10 14:49:39 2024",
+      "On host MacBook-Pro.local platform Darwin version 23.4.0 by user lextm",
+      "Using Python version 3.12.0 (main, Nov 14 2023, 23:52:11) [Clang 15.0.0 (clang-1500.0.40.1)]"
+    ],
+    "module": "Hub-facs-prvt"
+  },
+  "pTrapAddrAddr": {
+    "class": "objecttype",
+    "description": "IP address of entity requesting event notification",
+    "maxaccess": "read-write",
+    "name": "pTrapAddrAddr",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.2.1.1.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "pTrapAddrComm": {
+    "class": "objecttype",
+    "description": "Community name the receiving entity will expect. When reading the instance of this object the value has no meaning.",
+    "maxaccess": "read-write",
+    "name": "pTrapAddrComm",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.2.1.1.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "pTrapAddrEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "Hub-facs-prvt",
+        "object": "pTrapAddrAddr"
+      }
+    ],
+    "maxaccess": "read-write",
+    "name": "pTrapAddrEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.22.3.2.1.1",
+    "status": "mandatory"
+  },
+  "pTrapAddrState": {
+    "class": "objecttype",
+    "description": "Determines status of this entry",
+    "maxaccess": "read-write",
+    "name": "pTrapAddrState",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.2.1.1.5",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "active": 1,
+          "inactive": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "pTrapAddrTbl": {
+    "class": "objecttype",
+    "description": "Table of managers to which traps must be sent. Up to 10 entries in table",
+    "maxaccess": "not-accessible",
+    "name": "pTrapAddrTbl",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.22.3.2.1",
+    "status": "mandatory"
+  },
+  "pTrapAddrType": {
+    "class": "objecttype",
+    "description": "Type of event that should be reported to this address, bit 0 - authentication trap bit 1 - other SNMP traps bit 2 - Error Traps bit 3 - Diagnostic Traps bit 4 - Debug Traps bit 5 - all Enterprise Traps other than fmDiagGenericTrap",
+    "maxaccess": "read-write",
+    "name": "pTrapAddrType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.2.1.1.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "pTrapAddrVer": {
+    "class": "objecttype",
+    "description": "Version number supported by destination node",
+    "maxaccess": "read-write",
+    "name": "pTrapAddrVer",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.2.1.1.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "pTrapAging": {
+    "class": "objecttype",
+    "description": "Time in sec. until we erase a trap entry",
+    "maxaccess": "read-write",
+    "name": "pTrapAging",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.3.2.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "pTrapLearning": {
+    "class": "objecttype",
+    "description": "Learn the addresses of the managers automatically.",
+    "maxaccess": "read-write",
+    "name": "pTrapLearning",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.3.2.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disable": 0,
+          "enable": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "pfmSystemBootFile": {
+    "class": "objecttype",
+    "description": "Path and file name that is sent as a TFTP request",
+    "maxaccess": "read-write",
+    "name": "pfmSystemBootFile",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.11",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "pfmSystemFileServer": {
+    "class": "objecttype",
+    "description": "IP address to which a TFTP for boot is sent.",
+    "maxaccess": "read-write",
+    "name": "pfmSystemFileServer",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.10",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "pfmSystemIPDefGway": {
+    "class": "objecttype",
+    "description": "Default Gateway Address",
+    "maxaccess": "read-write",
+    "name": "pfmSystemIPDefGway",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.9",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "pfmSystemIPNetMask": {
+    "class": "objecttype",
+    "description": "IP Network Mask",
+    "maxaccess": "read-write",
+    "name": "pfmSystemIPNetMask",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.8",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "pfmSystemIpAddr": {
+    "class": "objecttype",
+    "description": "IP address of the agent",
+    "maxaccess": "read-write",
+    "name": "pfmSystemIpAddr",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.7",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "pfmSystemReadCommunity": {
+    "class": "objecttype",
+    "description": "Community string for reading When reading the instance of this object the value has no meaning.",
+    "maxaccess": "read-write",
+    "name": "pfmSystemReadCommunity",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.13",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "pfmSystemSlipBaudRate": {
+    "class": "objecttype",
+    "description": "SLIP Baud rate This is object is available only when slip interface exist ",
+    "maxaccess": "read-write",
+    "name": "pfmSystemSlipBaudRate",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.17",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "baud1200": 0,
+          "baud19200": 4,
+          "baud2400": 1,
+          "baud38400": 5,
+          "baud4800": 2,
+          "baud9600": 3
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "pfmSystemSlipIPNetMask": {
+    "class": "objecttype",
+    "description": "SLIP IP Network Mask This is object is available only when slip interface exist ",
+    "maxaccess": "read-write",
+    "name": "pfmSystemSlipIPNetMask",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.16",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "pfmSystemSlipIpAddr": {
+    "class": "objecttype",
+    "description": "SLIP IP address This is object is available only when slip interface exist ",
+    "maxaccess": "read-write",
+    "name": "pfmSystemSlipIpAddr",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.15",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "pfmSystemSlipParity": {
+    "class": "objecttype",
+    "description": "SLIP Parity This is object is available only when slip interface exist ",
+    "maxaccess": "read-write",
+    "name": "pfmSystemSlipParity",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.18",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "even": 2,
+          "none": 0,
+          "odd": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "pfmSystemSlipStopBits": {
+    "class": "objecttype",
+    "description": "SLIP Stop Bits This is object is available only when slip interface exist ",
+    "maxaccess": "read-write",
+    "name": "pfmSystemSlipStopBits",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.19",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "one": 0,
+          "two": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "pfmSystemWriteCommunity": {
+    "class": "objecttype",
+    "description": "Community string for writing When reading the instance of this object the value has no meaning.",
+    "maxaccess": "read-write",
+    "name": "pfmSystemWriteCommunity",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.51.1.2.14",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "private": {
+    "class": "objectidentity",
+    "name": "private",
+    "oid": "1.3.6.1.4"
+  },
+  "rTrapAddrAddr": {
+    "class": "objecttype",
+    "description": "IP address of entity requesting event notification",
+    "maxaccess": "read-write",
+    "name": "rTrapAddrAddr",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1.1",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "IpAddress"
+    }
+  },
+  "rTrapAddrAge": {
+    "class": "objecttype",
+    "description": "Aging time of the entry (in sec)",
+    "maxaccess": "read-only",
+    "name": "rTrapAddrAge",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1.7",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "rTrapAddrComm": {
+    "class": "objecttype",
+    "description": "Community name the receiving entity will expect. When reading the instance of this object the value has no meaning.",
+    "maxaccess": "read-write",
+    "name": "rTrapAddrComm",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "rTrapAddrEntry": {
+    "class": "objecttype",
+    "indices": [
+      {
+        "implied": 0,
+        "module": "Hub-facs-prvt",
+        "object": "rTrapAddrAddr"
+      }
+    ],
+    "maxaccess": "read-only",
+    "name": "rTrapAddrEntry",
+    "nodetype": "row",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1",
+    "status": "mandatory"
+  },
+  "rTrapAddrFlag": {
+    "class": "objecttype",
+    "description": "If the entry is fixed, it can not be deleted because of aging",
+    "maxaccess": "read-write",
+    "name": "rTrapAddrFlag",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1.6",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "fixed": 0,
+          "removable": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "rTrapAddrState": {
+    "class": "objecttype",
+    "description": "Determines status of this entry",
+    "maxaccess": "read-write",
+    "name": "rTrapAddrState",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1.5",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "active": 1,
+          "inactive": 2
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "rTrapAddrTbl": {
+    "class": "objecttype",
+    "description": "Table of managers to which traps must be sent. Up to 10 entries in table",
+    "maxaccess": "not-accessible",
+    "name": "rTrapAddrTbl",
+    "nodetype": "table",
+    "oid": "1.3.6.1.4.1.22.3.1.1",
+    "status": "mandatory"
+  },
+  "rTrapAddrType": {
+    "class": "objecttype",
+    "description": "Type of event that should be reported to this address, bit 0 - authentication trap bit 1 - other SNMP traps bit 2 - Error Traps bit 3 - Diagnostic Traps bit 4 - Debug Traps bit 5 - Enterprise Traps other than fmDiagGenericTrap",
+    "maxaccess": "read-write",
+    "name": "rTrapAddrType",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1.4",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "OCTET STRING"
+    }
+  },
+  "rTrapAddrVer": {
+    "class": "objecttype",
+    "description": "Version number supported by destination node",
+    "maxaccess": "read-write",
+    "name": "rTrapAddrVer",
+    "nodetype": "column",
+    "oid": "1.3.6.1.4.1.22.3.1.1.1.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "rTrapAging": {
+    "class": "objecttype",
+    "description": "Time in sec. until we erase a trap entry",
+    "maxaccess": "read-only",
+    "name": "rTrapAging",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.3.1.3",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "type": "INTEGER"
+    }
+  },
+  "rTrapLearning": {
+    "class": "objecttype",
+    "description": "Learn the addresses of the managers automatically.",
+    "maxaccess": "read-only",
+    "name": "rTrapLearning",
+    "nodetype": "scalar",
+    "oid": "1.3.6.1.4.1.22.3.1.2",
+    "status": "mandatory",
+    "syntax": {
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disable": 0,
+          "enable": 1
+        }
+      },
+      "type": "INTEGER"
+    }
+  },
+  "trap": {
+    "class": "objectidentity",
+    "name": "trap",
+    "oid": "1.3.6.1.4.1.22.3"
+  },
+  "traperm": {
+    "class": "objectidentity",
+    "name": "traperm",
+    "oid": "1.3.6.1.4.1.22.3.2"
+  },
+  "traprun": {
+    "class": "objectidentity",
+    "name": "traprun",
+    "oid": "1.3.6.1.4.1.22.3.1"
+  },
+  "trapvar": {
+    "class": "objectidentity",
+    "name": "trapvar",
+    "oid": "1.3.6.1.4.1.22.3.3"
+  }
+}
