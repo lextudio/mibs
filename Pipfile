@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pysmi = "*"
 mkdocs = "*"
 mkdocs-material = "*"
 
 [dev-packages]
+pysmi = "*"
 
 [requires]
 python_version = "3.12"
