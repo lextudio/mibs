@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='my_plugins',  # Changed name to reflect multiple plugins
+    name='mib_plugin',
     version='0.1',
     packages=find_packages(),
     install_requires=[
@@ -9,8 +9,7 @@ setup(
     ],
     entry_points={
         'mkdocs.plugins': [
-            'oid_search_plugin = plugins.oid_search_plugin:OIDSearchPlugin',
-            'mib_plugin = plugins.mib_plugin:MibPlugin',
+            'mib_plugin = mib_plugin:MibPlugin',
         ],
     },
     author='Your Name',

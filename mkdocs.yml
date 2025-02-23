@@ -3,8 +3,8 @@ site_description: Collection of SNMP MIB modules compatible with PySNMP
 site_url: https://mibs.pysnmp.com
 plugins:
   - mib_plugin
-  - search
   - oid_search_plugin
+  - search
 
 extra_javascript:
   - search_index.js
