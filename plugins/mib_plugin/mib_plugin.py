@@ -71,6 +71,21 @@ class MibPlugin(BasePlugin):
 
     def generate_mib_page(self, mib_data, module_name):
         content = f"# {module_name}\n\n"
+        
+        # Add dependencies section
+        imports = mib_data.get('imports', {})
+        if imports:
+            content += "## Dependencies\n\n"
+            content += "This MIB module imports definitions from the following MIB modules:\n\n"
+            content += "<table>\n"
+            content += "<tr><th>Imported Module</th><th>Symbols</th></tr>\n"
+            for imported_module, symbols in imports.items():
+                if imported_module != 'class':
+                    if imported_module in ["RFC-1212", "RFC-1215", "RFC1065-SMI", "RFC1155-SMI", "RFC1158-MIB", "RFC1213-MIB", "SNMPv2-CONF", "SNMPv2-SMI", "SNMPv2-TC", "SNMPv2-TM"]:
+                        content += f"<tr><td>{imported_module}</td><td>{', '.join(symbols)}</td></tr>\n"
+                    else:
+                        content += f"<tr><td><a href=\"../{imported_module}/\">{imported_module}</a></td><td>{', '.join(symbols)}</td></tr>\n"
+            content += "</table>\n\n"
         content += "## Objects\n\n"
         object_count = self.count_objects(mib_data)
         content += f"This MIB module contains {object_count} accessible objects.\n\n"
@@ -120,5 +135,5 @@ class MibPlugin(BasePlugin):
             stats_text = f"\nCurrently, this repository contains **{self.mib_count} MIB modules** with a total of **{self.total_objects} accessible SNMP objects**.\n"
             lines.insert(insert_pos, stats_text)
             return '\n'.join(lines)
-            
+
         return markdown
